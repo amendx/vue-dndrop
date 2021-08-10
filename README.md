@@ -2,9 +2,7 @@
 
 A fast and lightweight drag&drop, sortable library for Vue.js with many configuration options covering many d&d scenarios.
 
-This library consists wrapper Vue.js components over [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. This is a forked repo for [vue-smooth-dnd](
-
-- https://github.com/kutlugsahin/vue-smooth-dnd) that has been stashed for over 2 years.
+This library consists wrapper Vue.js components over [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. This is a forked repo for [vue-smooth-dnd](https://github.com/kutlugsahin/vue-smooth-dnd) that has been stashed for over 2 years.
 
 ## Demo
 
