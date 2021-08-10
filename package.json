@@ -66,9 +66,9 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.tsx?$": "ts-jest"
+      "\\.js$": "<rootDir>/node_modules/babel-jest"
     },
-    "testRegex": "/__tests__/.*\\.(spec|test)\\.[tj]sx?$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
       "ts",
       "tsx",
