@@ -42,7 +42,7 @@
     "url": "https://github.com/amendx/vue-dnd/issues"
   },
   "dependencies": {
-    "smooth-dndrop": "0.0.5"
+    "smooth-dndrop": "0.0.6"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
