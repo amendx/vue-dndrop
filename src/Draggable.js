@@ -1,4 +1,4 @@
-import { constants } from 'smooth-dnd';
+import { constants } from 'smooth-dndrop';
 import { getTagProps, validateTagProp } from './utils';
 
 const wrapChild = (createElement, ctx) => {

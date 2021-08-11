@@ -20,7 +20,7 @@ function output (ext, format = 'umd') {
     format: format,
     exports: 'named',
     globals: {
-      'smooth-dnd': 'SmoothDnD'
+      'smooth-dndrop': 'SmoothDnD'
     }
   }
 }
