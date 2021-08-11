@@ -5,7 +5,7 @@
 import path from 'path'
 import license from 'rollup-plugin-license'
 import commonjs from 'rollup-plugin-commonjs'
-import uglify from 'rollup-plugin-uglify'
+import { uglify } from 'rollup-plugin-uglify'
 import buble from 'rollup-plugin-buble'
 
 const pkg = require('../package.json')
@@ -36,7 +36,9 @@ const umd = {
   plugins: [
     license({
       banner: {
-        file: path.join(__dirname, 'banner.txt')
+        content: {
+          file: path.join(__dirname, 'banner.txt')
+        }
       },
     }),
     commonjs(),
