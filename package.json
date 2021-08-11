@@ -1,6 +1,6 @@
 {
   "name": "@amendx/vue-dnd",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "Vue wrappers for smooth-dnd",
   "author": "amendx && kutlugsahin",
   "repository": {
