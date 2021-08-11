@@ -14,10 +14,9 @@ const name = pkg.name
 const className = name.replace(/(^\w|-\w)/g, c => c.replace('-', '').toUpperCase())
 
 function output (ext, format = 'umd') {
-  const formatted = name.split('/')[1]
   return {
     name: className,
-    file: `dist/${formatted}.${ext}`,
+    file: `dist/${name}.${ext}`,
     format: format,
     exports: 'named',
     globals: {
