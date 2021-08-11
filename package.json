@@ -43,7 +43,6 @@
     "url": "https://github.com/amendx/vue-dnd/issues"
   },
   "dependencies": {
-    "jest": "^27.0.6",
     "smooth-dnd": "0.12.1"
   },
   "devDependencies": {
@@ -55,6 +54,7 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-standard": "^4.1.0",
+    "jest": "^27.0.6",
     "rollup": "^2.56.2",
     "rollup-plugin-buble": "^0.19.8",
     "rollup-plugin-commonjs": "^8.4.1",
