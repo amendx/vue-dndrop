@@ -1,4 +1,4 @@
-# Vue Smooth DnD
+# Vue drag-n-drop
 
 A fast and lightweight drag&drop, sortable library for Vue.js with many configuration options covering many d&d scenarios.
 
@@ -13,7 +13,7 @@ View the demo here:
 ## Installation
 
 ```shell
-npm i @amendx/vue-dnd
+npm i vue-dndrop
 ```
 
 ## Usage
