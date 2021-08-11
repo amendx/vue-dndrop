@@ -12,7 +12,7 @@
     "Kurt Lugsahin (https://github.com/kutlugsahin)"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org"
   },
   "keywords": [
     "Vue",
