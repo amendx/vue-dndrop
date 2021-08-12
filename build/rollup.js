@@ -18,7 +18,7 @@ function output (ext, format = 'umd') {
     name: className,
     file: `dist/${name}.${ext}`,
     format: format,
-    exports: 'named'
+    exports: 'named',
   };
 }
 

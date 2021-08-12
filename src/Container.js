@@ -1,9 +1,9 @@
 /* eslint-disable curly */
-import { smoothDnD } from './utils/container/container';
-import smoothUtils from './utils/container/dropHandlers';
+import smoothDnD from './utils/container/container.js';
+import { reactDropHandler } from './utils/container/dropHandlers';
 import { getTagProps, validateTagProp } from './utils';
 
-smoothDnD.dropHandler = smoothUtils.reactDropHandler().handler;
+smoothDnD.dropHandler = reactDropHandler().handler;
 smoothDnD.wrapChild = false;
 
 const eventEmitterMap = {

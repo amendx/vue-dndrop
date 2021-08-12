@@ -40,7 +40,6 @@
   "bugs": {
     "url": "https://github.com/amendx/vue-dnd/issues"
   },
-
   "devDependencies": {
     "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
