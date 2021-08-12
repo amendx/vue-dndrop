@@ -1,7 +1,7 @@
 {
   "name": "vue-dndrop",
   "version": "0.9.20",
-  "description": "Vue wrappers for smooth-dnd",
+  "description": "Vue wrappers for drag n droppin",
   "author": "amendx && kutlugsahin",
   "repository": {
     "type": "git",
@@ -23,8 +23,7 @@
     "drag",
     "drop",
     "draggable",
-    "dnd",
-    "smooth-dnd"
+    "dnd"
   ],
   "main": "dist/vue-dndrop.js",
   "module": "dist/vue-dndrop.esm.js",
@@ -41,9 +40,7 @@
   "bugs": {
     "url": "https://github.com/amendx/vue-dnd/issues"
   },
-  "dependencies": {
-    "smooth-dndrop": "0.0.6"
-  },
+
   "devDependencies": {
     "cross-env": "^7.0.3",
     "eslint": "^7.32.0",

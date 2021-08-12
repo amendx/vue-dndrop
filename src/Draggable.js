@@ -1,8 +1,7 @@
-import { constants } from 'smooth-dndrop';
 import { getTagProps, validateTagProp } from './utils';
 
 const wrapChild = (createElement, ctx) => {
-  const tagProps = getTagProps(ctx, constants.wrapperClass);
+  const tagProps = getTagProps(ctx, 'smooth-dnd-draggable-wrapper');
   return createElement(
     tagProps.value,
     Object.assign({}, tagProps.props),

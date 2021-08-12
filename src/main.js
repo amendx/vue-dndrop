@@ -1,8 +1,9 @@
 import Container from './Container';
 import Draggable from './Draggable';
-export * from 'smooth-dndrop';
+import container from './utils/container/container';
 
 export {
   Container,
   Draggable,
+  container as smoothDnD,
 };

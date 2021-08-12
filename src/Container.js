@@ -1,14 +1,16 @@
 /* eslint-disable curly */
-import { smoothDnD, dropHandlers } from 'smooth-dndrop';
+import { smoothDnD } from './utils/container/container';
+import smoothUtils from './utils/container/dropHandlers';
 import { getTagProps, validateTagProp } from './utils';
 
-smoothDnD.dropHandler = dropHandlers.reactDropHandler().handler;
+smoothDnD.dropHandler = smoothUtils.reactDropHandler().handler;
 smoothDnD.wrapChild = false;
 
 const eventEmitterMap = {
-  'drag-start': 'onDragStart',
-  'drag-end': 'onDragEnd',
+  // eslint-disable-next-line quote-props
   'drop': 'onDrop',
+  'drag-end': 'onDragEnd',
+  'drag-start': 'onDragStart',
   'drag-enter': 'onDragEnter',
   'drag-leave': 'onDragLeave',
   'drop-ready': 'onDropReady'
