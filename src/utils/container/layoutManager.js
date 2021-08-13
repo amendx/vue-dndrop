@@ -34,7 +34,7 @@ const verticalMap = {
   }
 };
 function orientationDependentProps (map) {
-  function get (objzz, prop) {
+  function get (obj, prop) {
     const mappedProp = map[prop];
     return obj[mappedProp || prop];
   }
