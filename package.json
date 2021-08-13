@@ -34,6 +34,7 @@
   "scripts": {
     "dev": "rollup -c build/rollup.js -w",
     "build": "rollup -c build/rollup.js",
+    "demo": "cd demo && npm run dev",
     "lint": "eslint src/*"
   },
   "license": "MIT",

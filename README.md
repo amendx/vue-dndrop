@@ -6,9 +6,11 @@ This library consists on a wrapper for Vue.js components over the long missed [s
 
 - This is a forked repo for [vue-smooth-dnd](https://github.com/kutlugsahin/vue-smooth-dnd) that has been stashed for over 2 years.
 
-## Demo
 
-View the demo here:
+
+## Demo - live
+
+View the **original** demo here:
 
 - https://kutlugsahin.github.io/vue-smooth-dnd
 
@@ -18,8 +20,9 @@ View the demo here:
 npm i vue-dndrop
 ```
 
-## Usage
+## Example
 
+![Example](https://media.giphy.com/media/w3FGEZkpQReJN1vWzu/giphy.gif)
 ### Vue
 
 ```jsx
