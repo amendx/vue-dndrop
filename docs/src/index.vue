@@ -15,7 +15,7 @@ export default {
     },
     openCode() {
       const name = this.$router.currentRoute.name;
-      const url = `https://github.com/amendx/vue-dndrop/tree/master/demo/src/pages/${name}.vue`;
+      const url = `https://github.com/amendx/vue-dndrop/tree/master/docs/src/pages/${name}.vue`;
       window.open(url, "_blank");
     },
     eeeee(e){
@@ -78,8 +78,8 @@ export default {
             <span>source</span>
           </div>
         </div>
-        <div class="demo">
-          <router-view @event="eeeee"></router-view>
+        <div class="docs">
+          <router-view></router-view>
         </div>
 
       <div class="footer">

@@ -1,5 +1,5 @@
 <template>
-  <div class="form-demo">
+  <div class="form-docs">
     <div class="form">
       <Container
         @drop="onDrop($event)"

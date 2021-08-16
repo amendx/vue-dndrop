@@ -1,14 +1,14 @@
 # Vue Smooth DnD Demo
 
-View the demo:
+View the docs:
 
 - [amendx.github.io/vue-dndrop](https://amendx.github.io/vue-dndrop)
 
 View the source code on GitHub:
 
-- [github.com/amendx/vue-smooth-dnd/tree/master/demo](https://github.com/amendx/vue-dndrop/tree/master/demo)
+- [github.com/amendx/vue-smooth-dnd/tree/master/docs](https://github.com/amendx/vue-dndrop/tree/master/docs)
 
-Run the demo locally:
+Run the docs locally:
 
 ```bash
 npm install

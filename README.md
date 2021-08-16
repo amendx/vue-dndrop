@@ -10,9 +10,9 @@ This library consists on a wrapper for Vue.js components over the long missed [s
 
 ## Demo - live
 
-View the **original** demo here:
+View the **original** docs here:
 
-- https://kutlugsahin.github.io/vue-smooth-dnd
+- https://amendx.github.io/vue-dndrop
 
 ## Installation
 
