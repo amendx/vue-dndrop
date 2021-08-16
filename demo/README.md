@@ -6,7 +6,7 @@ View the demo:
 
 View the source code on GitHub:
 
-- [github.com/kutlugsahin/vue-smooth-dnd/tree/master/demo](https://github.com/amendx/vue-dndrop/tree/master/demo)
+- [github.com/amendx/vue-smooth-dnd/tree/master/demo](https://github.com/amendx/vue-dndrop/tree/master/demo)
 
 Run the demo locally:
 
