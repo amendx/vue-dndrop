@@ -17,9 +17,6 @@ export default {
       const name = this.$router.currentRoute.name;
       const url = `https://github.com/amendx/vue-dndrop/tree/master/docs/src/pages/${name}.vue`;
       window.open(url, "_blank");
-    },
-    eeeee(e){
-      console.log(e)
     }
   },
 
@@ -45,7 +42,7 @@ export default {
           <div class="nav-header">
             <h3 class="nav-name">vue-dndrop</h3>
           </div>
-          <div>
+          <div >
             <div
               v-for="section in pages"
               :key="section.title"

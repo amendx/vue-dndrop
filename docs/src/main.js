@@ -9,7 +9,7 @@ import './assets/demos.css'
 import './assets/form.css'
 import './assets/terminal.css'
 import './assets/table.css'
-
+import './assets/kanban.css'
 
 import router from './config/router'
 import Demo from './index.vue'

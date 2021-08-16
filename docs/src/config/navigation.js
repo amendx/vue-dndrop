@@ -9,6 +9,7 @@ function page (name, title) {
 export default [
   section('Examples', [
     page('cards', 'Card board'),
+    page('cards-kanban', 'Kanban'),
     page('form', 'Form elements')
   ]),
   section('Sortables', [

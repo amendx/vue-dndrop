@@ -1,33 +1,17 @@
 
 .draggable-item {
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    color: #117cb3ff;
-    display: block;
-    background-color: #fff;
-    outline: 0;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: 6px;
-    margin-bottom: 2px;
-    margin-top: 2px;
-    cursor: default;
-    user-select: none;
-    cursor: pointer;
+    flex-direction: row !important;
+    justify-content: space-between;
+  text-align: center;
 }
 
 .draggable-item-horizontal {
-    cursor: pointer;
     height: 300px;
-    padding: 10px;
-    line-height: 100px;
-    text-align: center;
-    color: #117cb3ff;
-    display: block;
-    background-color: #fff;
-    outline: 0;
-    border: 1px solid rgba(0, 0, 0, .125);
-    margin-right: 4px;
+    align-items: center;
+} 
+
+.draggable-item div, .draggable-item-horizontal div {
+    color: red
 }
 
 .dragging {
@@ -36,7 +20,6 @@
 
 .card-scene {
     padding: 50px;
-    /* background-color: #fff; */
 }
 
 .card-container {
