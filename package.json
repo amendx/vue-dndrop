@@ -5,7 +5,7 @@
   "author": "amendx && kutlugsahin",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amendx/vue-dnd.git"
+    "url": "git+https://github.com/amendx/vue-dndrop.git"
   },
   "contributors": [
     "Dave Stewart (https://github.com/davestewart)",
@@ -39,7 +39,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/amendx/vue-dnd/issues"
+    "url": "https://github.com/amendx/vue-dndrop/issues"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
@@ -56,5 +56,5 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-uglify": "^6.0.4"
   },
-  "homepage": "https://github.com/amendx/vue-dnd#readme"
+  "homepage": "https://github.com/amendx/vue-dndrop#readme"
 }
