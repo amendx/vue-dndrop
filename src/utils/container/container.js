@@ -238,7 +238,7 @@ function handleDrop ({ element, draggables, layout, getOptions }) {
           // droppedElement: draggableInfo.element.firstElementChild,
         };
         dropHandler(dropHandlerParams, getOptions().onDrop);
-      } else {
+      } else if (getOptions().dropNotAllowed) {
         const { payload, container } = draggableInfo;
         return getOptions().dropNotAllowed({ payload, container });
       }

@@ -2,11 +2,9 @@
 
 A fast and lightweight drag&drop, sortable library for Vue.js with many configuration options covering many d&d scenarios.
 
-This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain js now. 
+This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain js now.
 
 - This is an updated and maintened repo for the long gone [vue-smooth-dnd](https://github.com/kutlugsahin/vue-smooth-dnd), that has been stashed for over 2 years.
-
-
 
 ## Demo - live
 
@@ -23,6 +21,7 @@ npm i vue-dndrop
 ## Example
 
 ![Example](https://media.giphy.com/media/w3FGEZkpQReJN1vWzu/giphy.gif)
+
 ### Vue
 
 ```jsx
@@ -398,6 +397,25 @@ onDrop (dropResult) {
   - **addedIndex** : `number` : index to add dropped item. Will be `null` if no item is added.
   - **payload** : `object` : the payload object retrieved by calling [get-child-payload](#get-child-payload) function.
   - **droppedElement** : `DOMElement` : the DOM element that is moved
+
+### `@drop-not-allowed`
+
+Event to be emitted by the current container when drop is not allowed or does not fit the rule applied inside the column/element validation.
+
+```jsx
+<Container @drop-not-allowed="dropNotAllowed">
+```
+
+```ts
+dropNotAllowed ({payload, container}) {
+  return false
+}
+```
+
+#### Parameters
+
+- **payload** : `object` : the payload object that is returned by [get-child-payload](#get-child-payload). It will be undefined in case get-child-payload is not set.
+- **container** : `object` : return the container which the current payload was unable to be dropped.
 
 ## API: Draggable
 
