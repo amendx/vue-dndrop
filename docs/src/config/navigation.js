@@ -33,7 +33,7 @@ export default [
   section('Interaction', [
     page('events', 'Callbacks and Events')
   ]),
-  section('Table of contents', [
-    page('props-values', 'Props and values')
-  ])
+  // section('Table of contents', [
+  //   page('props-values', 'Props and values')
+  // ])
 ];

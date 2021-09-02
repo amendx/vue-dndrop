@@ -1,7 +1,7 @@
 <template>
-  <div class="page">
+  <div class="wide-page">
     <p>Properties define the visual behaviour of the library:</p>
-    <table class="table">
+    <table style="border-spacing: 0">
       <thead>
         <tr>
           <th>Property</th>
@@ -148,23 +148,44 @@
 </template>
 
 <script>
-import { Container, Draggable } from "vue-dndrop";
+import { Container, Draggable } from 'vue-dndrop'
 
 export default {
-  name: "SimpleScroller",
+  name: 'SimpleScroller',
 
   components: { Container, Draggable },
 
   data() {
     return {
       list: [
-        { name: "Neil", category: "Engineering", value: 13 },
-        { name: "Norah", category: "Marketing", value: 23 },
-        { name: "Kasey", category: "Sales", value: 120 },
-        { name: "Sabrina", category: "Marketing", value: 40 },
-        { name: "Paul", category: "Sales", value: 45 }
-      ]
-    };
-  }
-};
+        { name: 'Neil', category: 'Engineering', value: 13 },
+        { name: 'Norah', category: 'Marketing', value: 23 },
+        { name: 'Kasey', category: 'Sales', value: 120 },
+        { name: 'Sabrina', category: 'Marketing', value: 40 },
+        { name: 'Paul', category: 'Sales', value: 45 },
+      ],
+    }
+  },
+}
 </script>
+
+<style lang="css" scoped>
+table {
+  display: table;
+  /* border-collapse: collapse does not work when rows are dragged (transformed) */
+  border-collapse: separate;
+}
+
+tr {
+  display: table-row !important;
+}
+
+tr[style*='transform'] {
+  border-collapse: separate !important;
+}
+
+td {
+  padding: 5px;
+  border: 1px solid #ccc !important;
+}
+</style>

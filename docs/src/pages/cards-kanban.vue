@@ -17,7 +17,9 @@
                   ><strong>#{{ item.id }}</strong></label
                 >
                 <button :class="['kanban-button', `${item.currentStatus}`]">
-                  {{ item.currentStatus || item.corStatus.nome }}
+                  <span v-if="notMobile">{{
+                    item.currentStatus || item.corStatus.nome
+                  }}</span>
                   {{ item.icon }}
                 </button>
               </div>
@@ -87,7 +89,11 @@ export default {
   name: 'Cards',
 
   components: { Kanban },
-
+  computed: {
+    notMobile() {
+      return window.innerWidth >= 1025
+    },
+  },
   data() {
     return {
       item: {},
