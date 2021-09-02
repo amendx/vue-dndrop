@@ -8,12 +8,13 @@ smoothDnD.wrapChild = false;
 
 const eventEmitterMap = {
   // eslint-disable-next-line quote-props
-  'drop': 'onDrop',
+  drop: 'onDrop',
   'drag-end': 'onDragEnd',
   'drag-start': 'onDragStart',
   'drag-enter': 'onDragEnter',
   'drag-leave': 'onDragLeave',
-  'drop-ready': 'onDropReady'
+  'drop-ready': 'onDropReady',
+  'drop-not-allowed': 'dropNotAllowed'
 };
 
 function getContainerOptions (props, context) {
@@ -29,7 +30,7 @@ function getContainerOptions (props, context) {
           };
         } else {
           result[optionName] = (...params) => {
-            return (prop)(...params);
+            return prop(...params);
           };
         }
       } else {
@@ -43,7 +44,7 @@ function getContainerOptions (props, context) {
   return options;
 }
 
-const mapOptions = context => {
+const mapOptions = (context) => {
   const props = Object.assign({}, context.$props, context.$listeners);
   return getContainerOptions(props, context);
 };
@@ -101,14 +102,14 @@ export default {
     },
     getGhostParent: Function,
     'drop-ready': Function,
-    dropPlaceholder: [Object, Boolean]
+    dropPlaceholder: [Object, Boolean],
   },
   render: function (createElement) {
     const tagProps = getTagProps(this);
     return createElement(
       tagProps.value,
       Object.assign({}, { ref: 'container' }, tagProps.props),
-      this.$slots.default,
+      this.$slots.default
     );
-  }
+  },
 };

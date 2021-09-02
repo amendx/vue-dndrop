@@ -57,7 +57,9 @@ function isDragRelevant ({ element, getOptions }) {
     if (
       sourceOptions.groupName &&
       sourceOptions.groupName === options.groupName
-    ) return true;
+    ) {
+      return true;
+    }
 
     return false;
   };
@@ -216,7 +218,7 @@ function handleDrop ({ element, draggables, layout, getOptions }) {
     forDispose = false
   ) {
     draggablesReset();
-    // if drop zone is valid => complete drag else do nothing everything will be reverted by draggablesReset()
+    // if drop zone is valid => complete drag, else emit dropNotAllowed and everything will be reverted by draggablesReset()
     if (!draggableInfo.cancelDrop) {
       if (
         draggableInfo.targetElement ||
@@ -236,6 +238,9 @@ function handleDrop ({ element, draggables, layout, getOptions }) {
           // droppedElement: draggableInfo.element.firstElementChild,
         };
         dropHandler(dropHandlerParams, getOptions().onDrop);
+      } else {
+        const { payload, container } = draggableInfo;
+        return getOptions().dropNotAllowed({ payload, container });
       }
     }
   };

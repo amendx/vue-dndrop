@@ -1,132 +1,135 @@
 <script>
-import { Container, Draggable } from "vue-dndrop";
+import { Container, Draggable } from 'vue-dndrop'
 export default {
-  name: "Kanban",
+  name: 'Kanban',
   components: { Container, Draggable },
   props: {
     loading: {
       type: Boolean,
-      default: false
+      default: false,
     },
     columns: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     colWidth: {
       type: [Number, String],
-      default: () => ""
+      default: () => '',
     },
     colMinWidth: {
       type: [Number, String],
-      default: () => ""
+      default: () => '',
     },
     colMaxWidth: {
       type: [Number, String],
-      default: () => ""
+      default: () => '',
     },
     dropText: {
       type: String,
-      default: () => "Arraste e solte aqui"
+      default: () => 'Arraste e solte aqui',
     },
     dropIcon: {
       type: String,
-      default: () => "copy"
+      default: () => 'copy',
     },
     noBorder: {
       type: Boolean,
-      default: false
+      default: false,
     },
     innerColCount: {
       type: Boolean,
-      default: false
+      default: false,
     },
     colBgColor: {
       type: String,
-      default: () => "var(--shr-color-grayscale-bg-secondary)"
+      default: () => 'var(--shr-color-grayscale-bg-secondary)',
     },
     countText: {
       type: String,
-      default: () => "itens"
-    }
+      default: () => 'itens',
+    },
   },
   data() {
     return {
       sourceContainerIndex: null,
       kanbanColumns: [],
       dropPlaceholderOptions: {
-        className: "shr-kanban__drop-preview",
-        animationDuration: "150",
-        showOnTop: true
-      }
-    };
+        className: 'shr-kanban__drop-preview',
+        animationDuration: '150',
+        showOnTop: true,
+      },
+    }
   },
   computed: {
     colSkeleton() {
-      const screenSize = window.innerWidth - 300;
-      const quantity = screenSize / (this.colMinWidth || 180);
-      return Math.ceil(quantity);
+      const screenSize = window.innerWidth - 300
+      const quantity = screenSize / (this.colMinWidth || 180)
+      return Math.ceil(quantity)
     },
 
     columnStyle() {
       return `width: ${this.colWidth}px;
           min-width: ${this.colMinWidth}px;
           max-width: ${this.colMaxWidth}px;
-          `;
+          `
     },
     contentStyle() {
-      return `background-color: ${this.colBgColor}`;
+      return `background-color: ${this.colBgColor}`
     },
     columnClasses() {
-      const classes = [];
-      if (this.noBorder) classes.push("shr-kanban__column--no-border");
-      return classes;
-    }
+      const classes = []
+      if (this.noBorder) classes.push('shr-kanban__column--no-border')
+      return classes
+    },
   },
   mounted() {
-    this.kanbanColumns = [...this.columns];
+    this.kanbanColumns = [...this.columns]
   },
   methods: {
     dropAction(arr, dragResult, column) {
-      const { removedIndex, addedIndex, payload } = dragResult;
-      const { status } = column;
-      if (removedIndex === null && addedIndex === null) return arr;
+      const { removedIndex, addedIndex, payload } = dragResult
+      const { status } = column
+      if (removedIndex === null && addedIndex === null) return arr
 
-      const itens = [...arr];
-      let itemToAdd = payload;
+      const itens = [...arr]
+      let itemToAdd = payload
 
       if (removedIndex !== null) {
-        itemToAdd = itens.splice(removedIndex, 1)[0];
+        itemToAdd = itens.splice(removedIndex, 1)[0]
       }
       if (addedIndex !== null) {
-        itens.splice(addedIndex, 0, itemToAdd);
+        itens.splice(addedIndex, 0, itemToAdd)
         if (payload.status.length > 1)
-          this.$emit("item-dropped", { item: payload, column: status });
+          this.$emit('item-dropped', { item: payload, column: status })
         else if (payload.status !== status)
-          this.$emit("status-change", {
+          this.$emit('status-change', {
             item: payload,
-            newStatus: status
-          });
+            newStatus: status,
+          })
       }
 
-      return itens;
+      return itens
     },
     validation(src, payload, index, validator = () => true) {
-      const isSource = index === this.sourceContainerIndex;
-      return isSource || validator(src, payload, index);
+      const isSource = index === this.sourceContainerIndex
+      return isSource || validator(src, payload, index)
     },
     onDrop(index, dropResult, column) {
       this.kanbanColumns[index].columnItems = this.dropAction(
         this.kanbanColumns[index].columnItems,
         dropResult,
         column
-      );
+      )
     },
     getDraggedItem(item, indice, prop) {
-      this.sourceContainerIndex = indice;
-      return this.kanbanColumns[indice].columnItems[item];
-    }
-  }
-};
+      this.sourceContainerIndex = indice
+      return this.kanbanColumns[indice].columnItems[item]
+    },
+    dropNotAllowed({ payload, container }) {
+      console.log('drop not allowed', payload)
+    },
+  },
+}
 </script>
 
 <template>
@@ -154,25 +157,26 @@ export default {
             v-if="innerColCount"
             :class="[
               'shr-kanban__quantity',
-              'shr-kanban__quantity--inner-count'
+              'shr-kanban__quantity--inner-count',
             ]"
           >
             {{ column.columnItems.length }} {{ countText }}
           </p>
           <Container
             group-name="kanban"
-            :get-child-payload="event => getDraggedItem(event, index)"
+            :get-child-payload="(event) => getDraggedItem(event, index)"
             :should-accept-drop="
               (src, payload) =>
                 validation(src, payload, index, column.validation)
             "
             :drop-placeholder="dropPlaceholderOptions"
-            @drag-start="
-              sourceContainerIndex = index;
-              $emit('drag');
-            "
-            @drag-enter="$emit('selected-column', column)"
             @drop="onDrop(index, $event, column)"
+            @drag-start="
+              sourceContainerIndex = index
+              $emit('drag')
+            "
+            @drop-not-allowed="dropNotAllowed"
+            @drag-enter="$emit('selected-column', column)"
           >
             <Draggable
               v-for="(item, indice) in column.columnItems"
@@ -182,7 +186,7 @@ export default {
             </Draggable>
 
             <div class="shr-kanban__move-icon">
-             <span>{{ dropText }}</span>
+              <span>{{ dropText }}</span>
             </div>
           </Container>
         </div>
@@ -255,4 +259,3 @@ export default {
     </div>
   </div>
 </template>
-
