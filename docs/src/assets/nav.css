@@ -18,7 +18,7 @@
 }
 
 @media screen and (max-width: 1025px) {
-  .nav .open {
+  .nav.open {
     max-width: 230px;
   }
 }
