@@ -626,10 +626,12 @@ function cancelDrag () {
     dragListeningContainers.forEach(container => {
       container.handleDrag(outOfBoundsDraggableInfo);
     });
-    draggableInfo.targetElement = null;
-    draggableInfo.cancelDrop = true;
-    onMouseUp();
-    isCanceling = false;
+    if (draggableInfo) {
+      draggableInfo.targetElement = null;
+      draggableInfo.cancelDrop = true;
+      onMouseUp();
+      isCanceling = false;
+    }
   }
 }
 function Mediator () {

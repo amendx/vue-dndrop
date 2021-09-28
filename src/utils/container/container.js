@@ -219,18 +219,21 @@ function handleDrop ({ element, draggables, layout, getOptions }) {
   ) {
     draggablesReset();
     // if drop zone is valid => complete drag, else emit dropNotAllowed and everything will be reverted by draggablesReset()
-    if (!draggableInfo.cancelDrop) {
+    if (draggableInfo && !draggableInfo.cancelDrop) {
       if (
         draggableInfo.targetElement ||
         getOptions().removeOnDropOut ||
         forDispose
       ) {
+        const indexNotNull = (index) => index !== null;
+
         const actualAddIndex =
-          addedIndex !== null
-            ? removedIndex !== null && removedIndex < addedIndex
+          indexNotNull(addedIndex)
+            ? indexNotNull(removedIndex) && removedIndex < addedIndex
               ? addedIndex - 1
               : addedIndex
             : null;
+
         const dropHandlerParams = {
           removedIndex,
           addedIndex: actualAddIndex,
