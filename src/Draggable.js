@@ -1,11 +1,12 @@
 import { getTagProps, validateTagProp } from './utils';
+import { h } from 'vue';
 
 const wrapChild = (createElement, ctx) => {
   const tagProps = getTagProps(ctx, 'smooth-dnd-draggable-wrapper');
   return createElement(
     tagProps.value,
     Object.assign({}, tagProps.props),
-    ctx.$slots.default
+    ctx.$slots.default()
   );
 };
 
@@ -17,7 +18,7 @@ export default {
       default: 'div'
     }
   },
-  render: function (createElement) {
-    return wrapChild(createElement, this);
+  render: function () {
+    return wrapChild(h, this);
   }
 };

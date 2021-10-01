@@ -2,7 +2,7 @@
 import smoothDnD from './utils/container/container.js';
 import { reactDropHandler } from './utils/container/dropHandlers';
 import { getTagProps, validateTagProp } from './utils';
-
+import { h } from 'vue';
 smoothDnD.dropHandler = reactDropHandler().handler;
 smoothDnD.wrapChild = false;
 
@@ -104,12 +104,12 @@ export default {
     'drop-ready': Function,
     dropPlaceholder: [Object, Boolean],
   },
-  render: function (createElement) {
+  render: function () {
     const tagProps = getTagProps(this);
-    return createElement(
+    return h(
       tagProps.value,
       Object.assign({}, { ref: 'container' }, tagProps.props),
-      this.$slots.default
+      this.$slots.default()
     );
   },
 };
