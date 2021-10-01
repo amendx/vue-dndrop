@@ -2,8 +2,7 @@
 
 ---
 
-A fast and lightweight drag & drop library for Vue.js (v2 & v3) with many configuration options covering many scenarios :medal_military:
-
+A fast and lightweight drag & drop library for Vue.js with many configuration options covering many scenarios.
 ## Table of contents
 
 - [Installation](#installation)
