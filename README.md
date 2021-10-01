@@ -1,28 +1,48 @@
-### vue-dndrop :medal_military:
+### vue-dndrop
 
-> A fast and lightweight drag & drop library for Vue.js (v2 & v3) with many configuration options covering many scenarios.
+---
 
-#### Installation :rotating_light:
+A fast and lightweight drag & drop library for Vue.js (v2 & v3) with many configuration options covering many scenarios :medal_military:
 
-> **This library is now supported for both Vue 2 and Vue 3 versions**
+## Table of contents
 
-- For Vue 2.x:
+- [Installation](#installation)
+- [Demo](#demo)
+- [Example](#example)
 
-```shell
-npm i vue-dndrop
-```
+### API
 
-- For Vue 3.x:
+- [Container](#container)
+- [Lifecycle](#lifecycle)
+- [Callbacks](#callbacks)
+- [Events](#events)
+- [Draggable](#draggable)
+
+---
+
+#### Installation
+
+##### **This library is now supported for both Vue 2 and Vue 3 versions**
+
+- `vue 2.x`:
 
 ```shell
 npm i vue-dndrop@next
 ```
 
-> This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain js now.
+- `vue 3.x`:
 
-> - This is an updated and maintened repo for the long gone [vue-smooth-dnd](https://github.com/kutlugsahin/vue-smooth-dnd), that has been stashed for over 2 years.
+```shell
+npm i vue-dndrop@next
+```
 
-## Demo - live
+###### This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain javascript now.
+
+> Feel free to contribute.
+
+---
+
+#### Demo
 
 View the **original** docs here:
 
@@ -69,11 +89,11 @@ export default {
 </script>
 ```
 
-## API: Container
+## Container
 
 > Component that contains the draggable elements or components. Each of its children should be wrapped by **Draggable** component
 
-## Properties
+### Properties
 
 > Properties define the visual behaviour of the library:
 
@@ -427,11 +447,11 @@ dropNotAllowed ({payload, container}) {
 - **payload** : `object` : the payload object that is returned by [get-child-payload](#get-child-payload). It will be undefined in case get-child-payload is not set.
 - **container** : `object` : return the container which the current payload was unable to be dropped.
 
-## API: Draggable
+## Draggable
 
 Wrapper component for Container's children. Every child element should be wrapped with **Draggable** component.
 
-## Properties
+### Properties
 
 ### `tag`
 
