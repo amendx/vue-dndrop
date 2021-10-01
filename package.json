@@ -1,7 +1,7 @@
 {
   "name": "vue-dndrop",
-  "version": "1.0.3",
-  "description": "Vue wrappers for drag n droppin",
+  "version": "1.0.4",
+  "description": "Vue wrappers for drag n drop",
   "author": "amendx && kutlugsahin",
   "repository": {
     "type": "git",
@@ -17,6 +17,9 @@
   "keywords": [
     "Vue",
     "Vue.js",
+    "vue3",
+    "vue3.js",
+    "vue 3.x",
     "sortable",
     "drag and drop",
     "drag&drop",
