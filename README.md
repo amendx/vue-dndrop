@@ -1,22 +1,32 @@
-# Vue drag-n-drop
+### vue-dndrop :medal_military:
 
-A fast and lightweight drag&drop, sortable library for Vue.js with many configuration options covering many d&d scenarios.
+> A fast and lightweight drag & drop library for Vue.js (v2 & v3) with many configuration options covering many scenarios.
 
-This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain js now.
+#### Installation :rotating_light:
 
-- This is an updated and maintened repo for the long gone [vue-smooth-dnd](https://github.com/kutlugsahin/vue-smooth-dnd), that has been stashed for over 2 years.
+> **This library is now supported for both Vue 2 and Vue 3 versions**
+
+- For Vue 2.x:
+
+```shell
+npm i vue-dndrop
+```
+
+- For Vue 3.x:
+
+```shell
+npm i vue-dndrop@next
+```
+
+> This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain js now.
+
+> - This is an updated and maintened repo for the long gone [vue-smooth-dnd](https://github.com/kutlugsahin/vue-smooth-dnd), that has been stashed for over 2 years.
 
 ## Demo - live
 
 View the **original** docs here:
 
 - https://amendx.github.io/vue-dndrop
-
-## Installation
-
-```shell
-npm i vue-dndrop
-```
 
 ## Example
 
@@ -61,11 +71,11 @@ export default {
 
 ## API: Container
 
-Component that contains the draggable elements or components. Each of its children should be wrapped by **Draggable** component
+> Component that contains the draggable elements or components. Each of its children should be wrapped by **Draggable** component
 
 ## Properties
 
-Properties define the visual behaviour of the library:
+> Properties define the visual behaviour of the library:
 
 | Property                |           Type            |            Default            | Description                                                                                                                                                                                                   |
 | ----------------------- | :-----------------------: | :---------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -86,8 +96,8 @@ Properties define the visual behaviour of the library:
 
 ### `tag`
 
-Tag name or the node definition to render the root element of the Container.
-Default value is 'div'.
+> Tag name or the node definition to render the root element of the Container.
+> Default value is 'div'.
 
 ```ts
 :tag="{value: 'table', props: {class: 'my-table'}}"
@@ -108,7 +118,7 @@ tag = "table";
 
 ## Lifecycle
 
-The lifecycle of a drag is both described, and can be controlled, by a series of [callbacks](#callbacks) and [events](#events), which are illustrated below for a example **containing 3 containers**:
+> The lifecycle of a drag is both described, and can be controlled, by a series of [callbacks](#callbacks) and [events](#events), which are illustrated below for a example **containing 3 containers**:
 
 ```
 Mouse     Calls  Callback / Event       Parameters              Notes
@@ -141,7 +151,7 @@ up     o                                                        Finish drag
            n x   drop                   dropResult              Fired only for droppable containers
 ```
 
-Note that `should-accept-drop` is fired before every `drag-start`, and before every `drag-end`, but has been omitted here for clarity.
+> Note that `should-accept-drop` is fired before every `drag-start`, and before every `drag-end`, but has been omitted here for clarity.
 
 The `dragResult` parameter has the format:
 
@@ -164,7 +174,7 @@ dropResult: {
 }
 ```
 
-Note that additional parameters can be passed to callbacks and event handlers by writing an interim handler _inline_ in the markup:
+> Note that additional parameters can be passed to callbacks and event handlers by writing an interim handler _inline_ in the markup:
 
 ```jsx
 <div v-for="(items, index) in groups"
@@ -176,15 +186,15 @@ Note that additional parameters can be passed to callbacks and event handlers by
 </div>
 ```
 
-This can provide handler functions context-sensitive data, such as the loop index or current item.
+> This can provide handler functions context-sensitive data, such as the loop index or current item.
 
 ## Callbacks
 
-Callbacks provide additional logic and checks before and during user interaction.
+> Callbacks provide additional logic and checks before and during user interaction.
 
 ### `get-child-payload()`
 
-The function to be called to get the payload object to be passed **onDrop** function.
+> The function to be called to get the payload object to be passed **onDrop** function.
 
 ```jsx
 <Container :get-child-payload="getChildPayload">
@@ -208,7 +218,7 @@ getChildPayload (index) {
 
 ### `should-accept-drop()`
 
-The function to be called by all containers before drag starts to determine the containers to which the drop is possible. Setting this function will override the **group-name** property and only the return value of this function will be taken into account.
+> The function to be called by all containers before drag starts to determine the containers to which the drop is possible. Setting this function will override the **group-name** property and only the return value of this function will be taken into account.
 
 ```jsx
 <Container :should-accept-drop="shouldAcceptDrop">
@@ -231,8 +241,8 @@ shouldAcceptDrop (sourceContainerOptions, payload) {
 
 ### `should-animate-drop()`
 
-The function to be called by the target container to which the dragged item will be dropped.
-Sometimes dragged item's dimensions are not suitable with the target container and dropping animation can be wierd. So it can be disabled by returning **false**. If not set drop animations are enabled.
+> The function to be called by the target container to which the dragged item will be dropped.
+> Sometimes dragged item's dimensions are not suitable with the target container and dropping animation can be wierd. So it can be disabled by returning **false**. If not set drop animations are enabled.
 
 ```jsx
 <Container :should-animate-drop="shouldAnimateDrop">
@@ -255,9 +265,9 @@ shouldAnimateDrop (sourceContainerOptions, payload) {
 
 ### `get-ghost-parent()`
 
-The function to be called to get the element that the dragged ghost will be appended. Default parent element is the container itself.
-The ghost element is positioned as 'fixed' and appended to given parent element.
-But if any anchestor of container has a transform property, ghost element will be positioned relative to that element which breaks the calculations. Thats why if you have any transformed parent element of Containers you should set this property so that it returns any element that has not transformed parent element.
+> The function to be called to get the element that the dragged ghost will be appended. Default parent element is the container itself.
+> The ghost element is positioned as 'fixed' and appended to given parent element.
+> But if any anchestor of container has a transform property, ghost element will be positioned relative to that element which breaks the calculations. Thats why if you have any transformed parent element of Containers you should set this property so that it returns any element that has not transformed parent element.
 
 ```jsx
 <Container :get-ghost-parent="getGhostParent">
@@ -277,11 +287,11 @@ getGhostParent() {
 
 ## Events
 
-Events may call user-defined handlers at particular points in the drag-and-drop lifecycle.
+> Events may call user-defined handlers at particular points in the drag-and-drop lifecycle.
 
 ### `@drag-start`
 
-Event to be emitted by all containers on drag start.
+> Event to be emitted by all containers on drag start.
 
 ```jsx
 <Container @drag-start="onDragStart">
@@ -303,7 +313,7 @@ onDragStart (dragResult) {
 
 ### `@drag-end`
 
-The function to be called by all containers on drag end. Called before [drop](#drop) event.
+> The function to be called by all containers on drag end. Called before [drop](#drop) event.
 
 ```jsx
 <Container @drag-end="onDragEnd">
@@ -339,7 +349,7 @@ onDragEnter () {
 
 ### `@drag-leave`
 
-The event to be emitted by the relevant container whenever a dragged item leaves its boundaries while dragging.
+> The event to be emitted by the relevant container whenever a dragged item leaves its boundaries while dragging.
 
 ```jsx
 <Container @drag-leave="onDragLeave">
@@ -353,7 +363,7 @@ onDragLeave () {
 
 ### `@drop-ready`
 
-The function to be called by the container which is being drag over, when the index of possible drop position changed in container. Basically it is called each time the draggables in a container slides for opening a space for dragged item. **dropResult** is the only parameter passed to the function which contains the following properties.
+> The function to be called by the container which is being drag over, when the index of possible drop position changed in container. Basically it is called each time the draggables in a container slides for opening a space for dragged item. **dropResult** is the only parameter passed to the function which contains the following properties.
 
 ```jsx
 <Container @drop-ready="onDropReady">
@@ -376,7 +386,7 @@ onDropReady(dropResult) {
 
 ### `@drop`
 
-The event to be emitted by any relevant container when drop is over. (After drop animation ends). Source container and any container that could accept drop is considered relevant.
+> The event to be emitted by any relevant container when drop is over. (After drop animation ends). Source container and any container that could accept drop is considered relevant.
 
 ```jsx
 <Container @drop="onDrop">
@@ -400,7 +410,7 @@ onDrop (dropResult) {
 
 ### `@drop-not-allowed`
 
-Event to be emitted by the current container when drop is not allowed or does not fit the rule applied inside the column/element validation.
+> Event to be emitted by the current container when drop is not allowed or does not fit the rule applied inside the column/element validation.
 
 ```jsx
 <Container @drop-not-allowed="dropNotAllowed">
@@ -425,8 +435,8 @@ Wrapper component for Container's children. Every child element should be wrappe
 
 ### `tag`
 
-Tag name or the node definition to render the root element of the Draggable.
-Default value is 'div'.
+> Tag name or the node definition to render the root element of the Draggable.
+> Default value is 'div'.
 
 ```jsx
 :tag="{value: 'tr', props: {class: 'my-table-row'}}"
