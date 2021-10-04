@@ -1,8 +1,21 @@
-### vue-dndrop
+<p align="center">
+  <a href="https://amendx.github.io/vue-dndrop">
+    <img src="https://user-images.githubusercontent.com/30783877/135903129-ec4df6f1-28e9-4cb2-8a06-025991c807b3.png" alt="vue-dndrop logo">
+  </a>
+</p>
+
+<p align="center">
+A Vue drag and drop library.
+</p>
+
+<p align="center">
+<a href="https://www.npmjs.com/package/vue-dndrop"><img alt="npm" src="https://img.shields.io/npm/v/vue-dndrop.svg?style=flat-square"></a>
+</p>
+
 
 ---
 
-A fast and lightweight drag & drop library for Vue.js with many configuration options covering many scenarios.
+A fast and lightweight drag & drop library for Vue.js with many configuration options, covering multiple scenarios.
 ## Table of contents
 
 - [Installation](#installation)
