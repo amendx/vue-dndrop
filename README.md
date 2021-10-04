@@ -49,7 +49,7 @@ View the **original** docs here:
 
 ## Example
 
-![Example](https://media.giphy.com/media/w3FGEZkpQReJN1vWzu/giphy.gif)
+![Example](https://user-images.githubusercontent.com/30783877/135848769-bbaf7f32-81b8-4958-9f3b-5bc009b56a1d.gif)
 
 ### Vue
 
