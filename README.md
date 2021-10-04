@@ -12,10 +12,10 @@ A Vue drag and drop library.
 <a href="https://www.npmjs.com/package/vue-dndrop"><img alt="npm" src="https://img.shields.io/npm/v/vue-dndrop.svg?style=flat-square"></a>
 </p>
 
-
----
+## Intro
 
 A fast and lightweight drag & drop library for Vue.js with many configuration options, covering multiple scenarios.
+
 ## Table of contents
 
 - [Installation](#installation)
@@ -30,9 +30,7 @@ A fast and lightweight drag & drop library for Vue.js with many configuration op
 - [Events](#events)
 - [Draggable](#draggable)
 
----
-
-#### Installation
+## Installation
 
 ##### **This library is now supported for both Vue 2 and Vue 3 versions**
 
@@ -54,7 +52,7 @@ npm i vue-dndrop@next
 
 ---
 
-#### Demo
+## Demo
 
 View the **original** docs here:
 
