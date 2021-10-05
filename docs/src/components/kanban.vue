@@ -26,7 +26,7 @@ export default {
     },
     dropText: {
       type: String,
-      default: () => 'Arraste e solte aqui',
+      default: () => 'Drop here',
     },
     dropIcon: {
       type: String,
@@ -42,7 +42,7 @@ export default {
     },
     colBgColor: {
       type: String,
-      default: () => 'var(--shr-color-grayscale-bg-secondary)',
+      default: () => '',
     },
     countText: {
       type: String,
@@ -54,7 +54,7 @@ export default {
       sourceContainerIndex: null,
       kanbanColumns: [],
       dropPlaceholderOptions: {
-        className: 'shr-kanban__drop-preview',
+        className: 'drop-preview',
         animationDuration: '150',
         showOnTop: true,
       },
@@ -75,11 +75,6 @@ export default {
     },
     contentStyle() {
       return `background-color: ${this.colBgColor}`
-    },
-    columnClasses() {
-      const classes = []
-      if (this.noBorder) classes.push('shr-kanban__column--no-border')
-      return classes
     },
   },
   mounted() {
@@ -133,32 +128,29 @@ export default {
 </script>
 
 <template>
-  <div class="shr-kanban">
+  <div class="kanban">
     <template v-if="!loading">
       <div
         v-for="(column, index) in kanbanColumns"
         :key="index"
         :style="columnStyle"
-        :class="['shr-kanban__column', columnClasses]"
+        class="kanban__column"
       >
-        <div class="shr-kanban__header">
-          <div class="shr-kanban__description">
-            <span v-if="$slots[`icon-${column.id}`]" class="shr-kanban__icon">
+        <div class="kanban__header">
+          <div class="kanban__description">
+            <span v-if="$slots[`icon-${column.id}`]" class="kanban__icon">
               <slot :name="`icon-${column.id}`" />
             </span>
-            <h3 class="shr-kanban__title">{{ column.name }}</h3>
+            <h3 class="kanban__title">{{ column.name }}</h3>
           </div>
-          <p v-if="!innerColCount" class="shr-kanban__quantity">
+          <p v-if="!innerColCount" class="kanban__quantity">
             {{ column.columnItems.length }} {{ countText }}
           </p>
         </div>
-        <div class="shr-kanban__content" :style="contentStyle">
+        <div class="kanban__content" :style="contentStyle">
           <p
             v-if="innerColCount"
-            :class="[
-              'shr-kanban__quantity',
-              'shr-kanban__quantity--inner-count',
-            ]"
+            :class="['kanban__quantity', 'kanban__quantity--inner-count']"
           >
             {{ column.columnItems.length }} {{ countText }}
           </p>
@@ -185,20 +177,20 @@ export default {
               <slot name="card" :item="item" />
             </Draggable>
 
-            <div class="shr-kanban__move-icon">
+            <div class="kanban__move-icon">
               <span>{{ dropText }}</span>
             </div>
           </Container>
         </div>
       </div>
     </template>
-    <div v-else class="shr-kanban__skeleton-container">
+    <div v-else class="kanban__skeleton-container">
       <slot name="skeleton" />
-      <div v-if="!$slots.skeleton" class="shr-kanban__skeleton">
+      <div v-if="!$slots.skeleton" class="kanban__skeleton">
         <div
           v-for="(i, index) in colSkeleton"
           :key="i"
-          class="shr-kanban__skeleton-column"
+          class="kanban__skeleton-column"
           :animation-data="index"
           :style="
             `min-width: ${colMinWidth || 180}px; max-width: ${colMaxWidth ||
@@ -210,9 +202,9 @@ export default {
             <div
               v-for="j in Math.floor(Math.random() * (7 - 2) + 2)"
               :key="j"
-              class="shr-kanban__skeleton-card"
+              class="kanban__skeleton-card"
             >
-              <div class="shr-kanban__skeleton-card--one">
+              <div class="kanban__skeleton-card--one">
                 <ShrSkeleton
                   type="rect"
                   width="50"
@@ -220,7 +212,7 @@ export default {
                   color="#efefe9"
                 />
               </div>
-              <div class="shr-kanban__skeleton-card--two">
+              <div class="kanban__skeleton-card--two">
                 <ShrSkeleton
                   type="rect"
                   width="50"
@@ -228,7 +220,7 @@ export default {
                   color="#efefe9"
                 />
               </div>
-              <div class="shr-kanban__skeleton-card--three">
+              <div class="kanban__skeleton-card--three">
                 <ShrSkeleton
                   type="rect"
                   width="120"
@@ -236,7 +228,7 @@ export default {
                   color="#e9e9e9"
                 />
               </div>
-              <div class="shr-kanban__skeleton-card--four">
+              <div class="kanban__skeleton-card--four">
                 <ShrSkeleton
                   type="rect"
                   width="70"
@@ -244,7 +236,7 @@ export default {
                   color="#efefe9"
                 />
               </div>
-              <div class="shr-kanban__skeleton-card--five">
+              <div class="kanban__skeleton-card--five">
                 <ShrSkeleton
                   type="rect"
                   width="100"

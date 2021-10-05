@@ -1,89 +1,6 @@
-<template>
-  <div class="kanban-cards">
-    <Kanban
-      :columns.sync="columns"
-      col-min-width="100"
-      col-max-width="300"
-      count-text="items here"
-      drop-text="Change to this status"
-      @item-dropped="columnChange"
-    >
-      <template v-slot:card="{ item }">
-        <div :class="['item', `${item.currentStatus}`]">
-          <div class="kanban-card">
-            <span class="card">
-              <div class="kanban-action">
-                <label
-                  ><strong>#{{ item.id }}</strong></label
-                >
-                <button :class="['kanban-button', `${item.currentStatus}`]">
-                  <span v-if="notMobile">{{
-                    item.currentStatus || item.corStatus.nome
-                  }}</span>
-                  {{ item.icon }}
-                </button>
-              </div>
-
-              <label class="label"> {{ item.task }}</label>
-              <small> Due date: {{ item.date }} </small>
-            </span>
-          </div>
-        </div>
-      </template>
-    </Kanban>
-  </div>
-</template>
-
 <script>
-import { applyDrag, generateItems } from '../utils/helpers'
+import { applyDrag, scene, lorem } from '../utils/helpers'
 import Kanban from '../components/kanban.vue'
-const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
-
-const columnNames = ['Backlog', 'To do', 'Doing', 'Finished']
-
-const cardColors = [
-  '#117cb3ff',
-  '#2989bbff',
-  '#4297c2ff',
-  '#5aa4caff',
-  '#73b2d1ff',
-  '#8bbfd9ff',
-  '#a4cde0ff',
-  '#bcdae8ff',
-  '#73b2d1ff',
-  '#4297c2ff',
-]
-
-const pickColor = () => {
-  const rand = Math.floor(Math.random() * 10)
-  return cardColors[rand]
-}
-
-const scene = {
-  type: 'container',
-  props: {
-    orientation: 'horizontal',
-  },
-  children: generateItems(4, (i) => ({
-    id: `column${i}`,
-    type: 'container',
-    name: columnNames[i],
-    props: {
-      orientation: 'vertical',
-      className: 'card-container',
-    },
-    children: generateItems(+(Math.random() * 10).toFixed() + 5, (j) => ({
-      type: 'draggable',
-      id: `${i}${j}`,
-      props: {
-        className: 'card',
-        style: { backgroundColor: pickColor() },
-      },
-      number: Math.floor(Math.random() * 100),
-      data: lorem.slice(0, Math.floor(Math.random() * 150) + 30),
-    })),
-  })),
-}
 
 export default {
   name: 'Cards',
@@ -260,3 +177,39 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div class="kanban-cards">
+    <Kanban
+      :columns.sync="columns"
+      col-min-width="100"
+      col-max-width="300"
+      count-text="items here"
+      drop-text="Change to this status"
+      @item-dropped="columnChange"
+    >
+      <template v-slot:card="{ item }">
+        <div :class="['item', `${item.currentStatus}`]">
+          <div class="kanban-card">
+            <span class="card">
+              <div class="kanban-action">
+                <label
+                  ><strong>#{{ item.id }}</strong></label
+                >
+                <button :class="['kanban-button', `${item.currentStatus}`]">
+                  <span v-if="notMobile">{{
+                    item.currentStatus || item.corStatus.nome
+                  }}</span>
+                  {{ item.icon }}
+                </button>
+              </div>
+
+              <label class="label"> {{ item.task }}</label>
+              <small> Due date: {{ item.date }} </small>
+            </span>
+          </div>
+        </div>
+      </template>
+    </Kanban>
+  </div>
+</template>
