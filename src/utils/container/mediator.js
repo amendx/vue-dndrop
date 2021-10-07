@@ -406,7 +406,7 @@ function onMouseUp () {
     dropAnimationStarted = true;
     handleDropAnimation(() => {
       isDragging = false;
-      fireOnDragStartEnd(false, draggableInfo.container);
+      fireOnDragStartEnd(false);
       const containers = dragListeningContainers || [];
       let containerToCallDrop = containers.shift();
       while (containerToCallDrop !== undefined) {
@@ -510,7 +510,7 @@ function initiateDrag (position, cursor) {
     }
     handleScroll = getScrollHandler(container, dragListeningContainers);
     dragListeningContainers.forEach(p => p.prepareDrag(p, dragListeningContainers));
-    fireOnDragStartEnd(true, container);
+    fireOnDragStartEnd(true);
     handleDrag(draggableInfo);
     getGhostParent().appendChild(ghostInfo.ghost);
     containerRectableWatcher.start();
