@@ -401,12 +401,13 @@ function onMouseUp () {
     cursorStyleElement = null;
   }
   if (draggableInfo) {
+    const container = (containers.filter(p => grabbedElement.parentElement === p.element)[0]);
     containerRectableWatcher.stop();
     handleMissedDragFrame();
     dropAnimationStarted = true;
     handleDropAnimation(() => {
       isDragging = false;
-      fireOnDragStartEnd(false);
+      fireOnDragStartEnd(false, container);
       const containers = dragListeningContainers || [];
       let containerToCallDrop = containers.shift();
       while (containerToCallDrop !== undefined) {
@@ -467,8 +468,9 @@ function getScrollHandler (container, dragListeningContainers) {
     return (props) => null;
   }
 }
-function fireOnDragStartEnd (isStart) {
+function fireOnDragStartEnd (isStart, container) {
   containers.forEach(p => {
+    if (container.getOptions().fireRelatedEventsOnly && p !== draggableInfo.container) return
     const fn = isStart ? p.getOptions().onDragStart : p.getOptions().onDragEnd;
     if (fn) {
       const options = {
@@ -508,7 +510,7 @@ function initiateDrag (position, cursor) {
     }
     handleScroll = getScrollHandler(container, dragListeningContainers);
     dragListeningContainers.forEach(p => p.prepareDrag(p, dragListeningContainers));
-    fireOnDragStartEnd(true);
+    fireOnDragStartEnd(true, container);
     handleDrag(draggableInfo);
     getGhostParent().appendChild(ghostInfo.ghost);
     containerRectableWatcher.start();
