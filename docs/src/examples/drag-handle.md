@@ -1,0 +1,3 @@
+# Drag handle
+
+<drag-handle />

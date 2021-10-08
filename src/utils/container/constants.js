@@ -1,27 +1,27 @@
-export const containerInstance = 'smooth-dnd-container-instance';
+export const containerInstance = 'dndrop-container-instance';
 
-export const defaultGroupName = '@@smooth-dnd-default-group@@';
-export const wrapperClass = 'smooth-dnd-draggable-wrapper';
-export const defaultGrabHandleClass = 'smooth-dnd-default-grap-handle';
+export const defaultGroupName = '@@dndrop-default-group@@';
+export const wrapperClass = 'dndrop-draggable-wrapper';
+export const defaultGrabHandleClass = 'dndrop-default-grap-handle';
 export const animationClass = 'animated';
 export const translationValue = '__smooth_dnd_draggable_translation_value';
 export const visibilityValue = '__smooth_dnd_draggable_visibility_value';
-export const ghostClass = 'smooth-dnd-ghost';
+export const ghostClass = 'dndrop-ghost';
 
-export const containerClass = 'smooth-dnd-container';
+export const containerClass = 'dndrop-container';
 
-export const extraSizeForInsertion = 'smooth-dnd-extra-size-for-insertion';
-export const stretcherElementClass = 'smooth-dnd-stretcher-element';
-export const stretcherElementInstance = 'smooth-dnd-stretcher-instance';
+export const extraSizeForInsertion = 'dndrop-extra-size-for-insertion';
+export const stretcherElementClass = 'dndrop-stretcher-element';
+export const stretcherElementInstance = 'dndrop-stretcher-instance';
 
 export const isDraggableDetached = 'smoth-dnd-is-draggable-detached';
 
-export const disbaleTouchActions = 'smooth-dnd-disable-touch-action';
-export const noUserSelectClass = 'smooth-dnd-no-user-select';
+export const disbaleTouchActions = 'dndrop-disable-touch-action';
+export const noUserSelectClass = 'dndrop-no-user-select';
 
-export const preventAutoScrollClass = 'smooth-dnd-prevent-auto-scroll-class';
+export const preventAutoScrollClass = 'dndrop-prevent-auto-scroll-class';
 
-export const dropPlaceholderDefaultClass = 'smooth-dnd-drop-preview-default-class';
-export const dropPlaceholderInnerClass = 'smooth-dnd-drop-preview-inner-class';
-export const dropPlaceholderWrapperClass = 'smooth-dnd-drop-preview-constant-class';
-export const dropPlaceholderFlexContainerClass = 'smooth-dnd-drop-preview-flex-container-class';
+export const dropPlaceholderDefaultClass = 'dndrop-drop-preview-default-class';
+export const dropPlaceholderInnerClass = 'dndrop-drop-preview-inner-class';
+export const dropPlaceholderWrapperClass = 'dndrop-drop-preview-constant-class';
+export const dropPlaceholderFlexContainerClass = 'dndrop-drop-preview-flex-container-class';

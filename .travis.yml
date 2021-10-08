@@ -1,0 +1,18 @@
+language: node_js
+
+node_js:
+  - node
+
+script:
+  - npm run docs
+
+after_success: - npm run deploy
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN_VUE_TRAVIS
+  keep_history: true,
+  local_dir: dist
+  on:
+    branch: master

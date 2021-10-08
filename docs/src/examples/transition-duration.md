@@ -1,0 +1,3 @@
+# Transition duration
+
+<transition-duration />

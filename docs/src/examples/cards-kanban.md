@@ -1,0 +1,3 @@
+# Cards kanban
+
+<cards-kanban />

@@ -1,0 +1,3 @@
+# Drag class
+
+<drag-class />

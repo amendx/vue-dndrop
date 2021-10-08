@@ -1,7 +1,7 @@
 import { getTagProps, validateTagProp } from './utils';
 
 const wrapChild = (createElement, ctx) => {
-  const tagProps = getTagProps(ctx, 'smooth-dnd-draggable-wrapper');
+  const tagProps = getTagProps(ctx, 'dndrop-draggable-wrapper');
   return createElement(
     tagProps.value,
     Object.assign({}, tagProps.props),

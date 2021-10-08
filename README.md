@@ -3,6 +3,7 @@
 ---
 
 A fast and lightweight drag & drop library for Vue.js with many configuration options covering many scenarios.
+
 ## Table of contents
 
 - [Installation](#installation)
@@ -69,7 +70,7 @@ View the **original** docs here:
 </template>
 
 <script>
-import { Container, Draggable } from "vue-smooth-dnd";
+import { Container, Draggable } from "vue-dndrop";
 import { applyDrag, generateItems } from "./utils";
 export default {
   name: "Simple",
