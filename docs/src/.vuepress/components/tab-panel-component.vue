@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "ShrTabPanel",
+  name: "TabPanel",
   props: {
     name: {
       type: String,
@@ -28,20 +28,18 @@ export default {
 <template>
   <div
     v-if="isActive"
-    :class="
-      `shr-tab-panel ${noTransition ? 'shr-tab-panel--no-transition' : ''}`
-    "
+    :class="`tab-panel ${noTransition ? 'tab-panel--no-transition' : ''}`"
   >
     <slot />
   </div>
 </template>
 
 <style>
-.shr-tab-panel {
+.tab-panel {
   width: 100%;
   animation: fadeEffect 0.8s;
 }
-.shr-tab-panel--no-transition {
+.tab-panel--no-transition {
   animation: none;
 }
 

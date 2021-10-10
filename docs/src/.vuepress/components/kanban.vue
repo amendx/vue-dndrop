@@ -198,54 +198,6 @@ export default {
           "
         >
           <slot name="skeletonCard" />
-          <template v-if="!$slots.skeletonCard">
-            <div
-              v-for="j in Math.floor(Math.random() * (7 - 2) + 2)"
-              :key="j"
-              class="kanban__skeleton-card"
-            >
-              <div class="kanban__skeleton-card--one">
-                <ShrSkeleton
-                  type="rect"
-                  width="50"
-                  height="12"
-                  color="#efefe9"
-                />
-              </div>
-              <div class="kanban__skeleton-card--two">
-                <ShrSkeleton
-                  type="rect"
-                  width="50"
-                  height="12"
-                  color="#efefe9"
-                />
-              </div>
-              <div class="kanban__skeleton-card--three">
-                <ShrSkeleton
-                  type="rect"
-                  width="120"
-                  height="12"
-                  color="#e9e9e9"
-                />
-              </div>
-              <div class="kanban__skeleton-card--four">
-                <ShrSkeleton
-                  type="rect"
-                  width="70"
-                  height="12"
-                  color="#efefe9"
-                />
-              </div>
-              <div class="kanban__skeleton-card--five">
-                <ShrSkeleton
-                  type="rect"
-                  width="100"
-                  height="12"
-                  color="#efefe9"
-                />
-              </div>
-            </div>
-          </template>
         </div>
       </div>
     </div>

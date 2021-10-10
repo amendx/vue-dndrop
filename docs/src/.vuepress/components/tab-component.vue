@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "ShrTab",
+  name: "TabComponent",
   props: {
     headerAlign: {
       type: String,
@@ -68,40 +68,40 @@ export default {
 </script>
 
 <template>
-  <div :class="`shr-tab --${headerAlign}`">
-    <div class="shr-tab__header">
-      <div ref="refTabs" class="shr-tab__header__list">
+  <div :class="`tab --${headerAlign}`">
+    <div class="tab__header">
+      <div ref="refTabs" class="tab__header__list">
         <div
           v-for="tab in tabs"
           :key="tab.name"
-          class="shr-tab__header__list__item"
+          class="tab__header__list__item"
           :class="{ 'is-active': tab.isActive }"
         >
           <div
-            class="shr-tab__header__list__item__clickable"
+            class="tab__header__list__item__clickable"
             @click="selectTab(tab)"
           >
             {{ tab.name }}
-            <div class="shr-tab__header__list__item__clickable__bar" />
+            <div class="tab__header__list__item__clickable__bar" />
           </div>
         </div>
       </div>
-      <div class="shr-tab__header__line-bar" />
+      <div class="tab__header__line-bar" />
     </div>
-    <div class="shr-tab__content">
+    <div class="tab__content">
       <slot />
     </div>
   </div>
 </template>
 
 <style scoped>
-.shr-tab {
+.tab {
   width: 100%;
 }
-.shr-tab__header {
+.tab__header {
   position: relative;
 }
-.shr-tab__header__line-bar {
+.tab__header__line-bar {
   position: absolute;
   right: 0;
   bottom: 3px;
@@ -110,7 +110,7 @@ export default {
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-.shr-tab__header__list {
+.tab__header__list {
   position: relative;
   display: flex;
   flex-grow: 1;
@@ -124,10 +124,10 @@ export default {
   user-select: none;
   scrollbar-width: none;
 }
-.shr-tab__header__list::-webkit-scrollbar {
+.tab__header__list::-webkit-scrollbar {
   display: none;
 }
-.shr-tab__header__list__item__clickable {
+.tab__header__list__item__clickable {
   position: relative;
   display: flex;
   justify-content: center;
@@ -142,7 +142,7 @@ export default {
   background-color: initial;
   border: 1px solid transparent;
 }
-.shr-tab__header__list__item__clickable__bar {
+.tab__header__list__item__clickable__bar {
   position: absolute;
   bottom: -4px;
   width: 100%;
@@ -152,29 +152,28 @@ export default {
   background-color: transparent;
   border-radius: 15px;
 }
-.shr-tab__header__list__item__clickable:hover {
+.tab__header__list__item__clickable:hover {
   color: #263c53aa;
 }
-.shr-tab__header__list__item.is-active .shr-tab__header__list__item__clickable {
+.tab__header__list__item.is-active .tab__header__list__item__clickable {
   color: #597ba0aa;
   letter-spacing: 0;
 }
-.shr-tab__header__list__item.is-active
-  .shr-tab__header__list__item__clickable__bar {
+.tab__header__list__item.is-active .tab__header__list__item__clickable__bar {
   z-index: 2;
   background-color: #597ba0aa;
 }
-.shr-tab__content {
+.tab__content {
   display: flex;
   width: 100%;
 }
-.--center .shr-tab__header__list {
+.--center .tab__header__list {
   justify-content: center;
 }
-.--left .shr-tab__header__list {
+.--left .tab__header__list {
   justify-content: flex-start;
 }
-.--right .shr-tab__header__list {
+.--right .tab__header__list {
   justify-content: flex-end;
 }
 </style>
