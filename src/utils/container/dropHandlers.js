@@ -11,7 +11,7 @@ export function domDropHandler ({ element, draggables }) {
 
     if (addedIndex !== null) {
       const wrapper = window.document.createElement('div');
-      wrapper.className = 'smooth-dnd-draggable-wrapper';
+      wrapper.className = 'dndrop-draggable-wrapper';
       wrapper.appendChild(
         removedWrapper && removedWrapper.firstElementChild
           ? removedWrapper.firstElementChild

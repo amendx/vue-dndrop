@@ -80,7 +80,7 @@ View the **original** docs here:
 </template>
 
 <script>
-import { Container, Draggable } from "vue-smooth-dnd";
+import { Container, Draggable } from "vue-dndrop";
 import { applyDrag, generateItems } from "./utils";
 export default {
   name: "Simple",
