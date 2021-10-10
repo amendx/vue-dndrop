@@ -27,6 +27,7 @@
           @drag-end="onDragEnd"
           @drop-not-allowed="dropNotAllowed"
           @drop="onDrop(index, $event)"
+          @fire-related-events-only="fireRelatedEventsOnly"
         >
           <Draggable v-for="item in items" :key="item.id">
             <div class="draggable-item">
@@ -96,6 +97,7 @@ export default {
         'drag-enter': true,
         'drag-leave': true,
         'drop-not-allowed': true,
+        'fire-related-events-only': false,
         drop: true,
       },
       logPayload: true,
@@ -134,6 +136,9 @@ export default {
 
     onDragEnd(...args) {
       this.log('drag-end', ...args)
+    },
+    fireRelatedEventsOnly(...args) {
+      this.log('fire-related-events-only', ...args)
     },
 
     onDragEnter(...args) {
