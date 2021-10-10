@@ -37,7 +37,6 @@ export default {
         "drag-enter": true,
         "drag-leave": true,
         "drop-not-allowed": true,
-        "fire-related-events-only": false,
         drop: true,
       },
       logPayload: true,
@@ -77,7 +76,6 @@ export default {
     onDragEnd(...args) {
       this.log("drag-end", ...args);
     },
-
     onDragEnter(...args) {
       this.log("drag-enter", ...args);
     },

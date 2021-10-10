@@ -239,7 +239,7 @@ function handleDrop ({ element, draggables, layout, getOptions }) {
           addedIndex: actualAddIndex,
           payload: draggableInfo.payload,
           // droppedElement: draggableInfo.element.firstElementChild,
-        }
+        };
         const shouldHandleDrop =
           !draggableInfo.container.getOptions().fireRelatedEventsOnly ||
           indexNotNull(removedIndex) ||

@@ -470,7 +470,7 @@ function getScrollHandler (container, dragListeningContainers) {
 function fireOnDragStartEnd (isStart) {
   const { container, payload } = draggableInfo;
   containers.forEach(p => {
-    if (container.getOptions().fireRelatedEventsOnly && p !== container) return
+    if (container.getOptions().fireRelatedEventsOnly && p !== container) return;
     const { onDragStart, onDragEnd } = p.getOptions();
     const fn = isStart ? onDragStart : onDragEnd;
     if (fn) {
