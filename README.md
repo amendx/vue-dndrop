@@ -16,11 +16,6 @@ A Vue drag and drop library.
 
 A fast and lightweight drag & drop library for Vue.js with many configuration options, covering multiple scenarios.
 
-<<<<<<< HEAD
-A fast and lightweight drag & drop library for Vue.js with many configuration options covering many scenarios.
-
-=======
->>>>>>> 8148fa320fe4dd0a6cade420f8baf4975a5d42fb
 ## Table of contents
 
 - [Installation](#installation)

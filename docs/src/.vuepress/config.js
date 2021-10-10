@@ -1,6 +1,8 @@
 const { description } = require("../../package");
 
 module.exports = {
+  base: "/vue-dndrop/",
+
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
@@ -45,19 +47,18 @@ module.exports = {
         text: "Examples",
         link: "/examples/events",
       },
-    
     ],
     sidebar: [
       {
         title: "Guide",
-        path: '/guide/',   
+        path: "/guide/",
         collapsable: false,
         children: ["/guide/installation", "/guide/using-vue"],
       },
 
       {
         title: "API",
-        path: '/api/',   
+        path: "/api/",
         collapsable: false,
         children: [
           "/api/container",
@@ -69,7 +70,7 @@ module.exports = {
       },
       {
         title: "Examples",
-        path: '/examples/',   
+        path: "/examples/",
         collapsable: false,
         children: [
           "/examples/events",
@@ -90,7 +91,6 @@ module.exports = {
         ],
       },
     ],
-
   },
 
   /**
