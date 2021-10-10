@@ -1,3 +1,5 @@
 # Events
 
-<events />
+<doc-example title="Events" file="events" />
+
+<!-- <events /> -->

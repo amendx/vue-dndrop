@@ -37,6 +37,7 @@ export default {
         "drag-enter": true,
         "drag-leave": true,
         "drop-not-allowed": true,
+        "fire-related-events-only": false,
         drop: true,
       },
       logPayload: true,
@@ -83,6 +84,9 @@ export default {
 
     onDragLeave(...args) {
       this.log("drag-leave", ...args);
+    },
+    fireRelatedEventsOnly(...args) {
+      this.log("fireRelatedEventsOnly", ...args);
     },
 
     onDrop(groupIndex, dropResult) {
@@ -226,7 +230,6 @@ export default {
   padding: 0.5rem;
   cursor: pointer;
   transition: border-color 0.2s linear;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
 }
 
 .buttons .button.remove {

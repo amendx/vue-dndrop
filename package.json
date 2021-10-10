@@ -56,7 +56,9 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-license": "^2.5.0",
     "rollup-plugin-typescript2": "^0.30.0",
-    "rollup-plugin-uglify": "^6.0.4"
+    "rollup-plugin-uglify": "^6.0.4",
+    "prismjs": "^1.25.0",
+    "raw-loader": "^4.0.2"
   },
   "homepage": "https://github.com/amendx/vue-dndrop#readme"
 }

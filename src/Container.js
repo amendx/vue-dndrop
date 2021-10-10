@@ -92,6 +92,7 @@ export default {
     drop: Function,
     getChildPayload: Function,
     shouldAnimateDrop: Function,
+    fireRelatedEventsOnly: { type: Boolean, default: false },
     shouldAcceptDrop: Function,
     'drag-enter': Function,
     'drag-leave': Function,

@@ -468,17 +468,19 @@ function getScrollHandler (container, dragListeningContainers) {
   }
 }
 function fireOnDragStartEnd (isStart) {
+  const { container, payload } = draggableInfo;
   containers.forEach(p => {
-    const fn = isStart ? p.getOptions().onDragStart : p.getOptions().onDragEnd;
+    if (container.getOptions().fireRelatedEventsOnly && p !== container) return
+    const { onDragStart, onDragEnd } = p.getOptions();
+    const fn = isStart ? onDragStart : onDragEnd;
     if (fn) {
       const options = {
-        isSource: p === draggableInfo.container,
-        payload: draggableInfo.payload,
+        isSource: p === container,
+        payload,
+        willAcceptDrop: false
       };
-      if (p.isDragRelevant(draggableInfo.container, draggableInfo.payload)) {
+      if (p.isDragRelevant(container, payload)) {
         options.willAcceptDrop = true;
-      } else {
-        options.willAcceptDrop = false;
       }
       fn(options);
     }
