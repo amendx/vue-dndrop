@@ -1,3 +1,3 @@
 # Simple
 
-<simple />
+<doc-example title="Simple" file="simple" />

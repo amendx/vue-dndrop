@@ -30,16 +30,16 @@ export const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, s
 const columnNames = ['Backlog', 'Doing', 'Finished'];
 
 const cardColors = [
-  '#117cb3ff',
-  '#2989bbff',
-  '#4297c2ff',
-  '#5aa4caff',
-  '#73b2d1ff',
-  '#8bbfd9ff',
-  '#a4cde0ff',
-  '#bcdae8ff',
-  '#73b2d1ff',
-  '#4297c2ff',
+  '#34495E',
+  '#84B0DC',
+  '#49627A',
+  '#41B883',
+  '#7096BB',
+  '#97CAFC',
+  '#6CC1C0',
+  '#41B883',
+  '#41B883',
+  '#49627A',
 ];
 
 const pickColor = () => {

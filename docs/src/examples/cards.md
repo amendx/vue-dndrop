@@ -1,3 +1,3 @@
 # Cards
 
-<cards />
+<doc-example title="Cards" file="cards" />

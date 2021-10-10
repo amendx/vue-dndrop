@@ -1,3 +1,3 @@
 # Table drag
 
-<table-drag />
+<doc-example title="Table drag" file="table-drag" />

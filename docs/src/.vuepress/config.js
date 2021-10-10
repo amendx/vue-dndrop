@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         text: "Examples",
-        link: "/examples/",
+        link: "/examples/events",
       },
     
     ],
@@ -73,7 +73,6 @@ module.exports = {
         collapsable: false,
         children: [
           "/examples/events",
-          "/examples/props-values",
           "/examples/cards",
           "/examples/cards-kanban",
           "/examples/copy",

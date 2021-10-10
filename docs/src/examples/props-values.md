@@ -1,3 +1,0 @@
-# Props & values
-
-<props-values />

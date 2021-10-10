@@ -1,3 +1,3 @@
 # Cards kanban
 
-<cards-kanban />
+<doc-example title="Cards kanban" file="cards-kanban" />

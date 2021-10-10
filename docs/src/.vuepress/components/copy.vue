@@ -45,11 +45,10 @@ export default {
 </script>
 
 <template>
-  <div
-    style="display: flex; justify-content: stretch; margin-top: 50px; margin-right: 50px"
-  >
-    <div style="margin-left: 50px; flex: 1">
+  <div class="copy">
+    <div class="item">
       <Container
+        class="item"
         behaviour="copy"
         group-name="1"
         :get-child-payload="getChildPayload1"
@@ -61,7 +60,7 @@ export default {
         </Draggable>
       </Container>
     </div>
-    <div style="margin-left: 50px; flex: 1">
+    <div class="item">
       <Container
         group-name="1"
         :get-child-payload="getChildPayload2"
@@ -74,7 +73,7 @@ export default {
         </Draggable>
       </Container>
     </div>
-    <div style="margin-left: 50px; flex: 1">
+    <div class="item">
       <Container
         group-name="1"
         :get-child-payload="getChildPayload3"
@@ -89,3 +88,13 @@ export default {
     </div>
   </div>
 </template>
+
+<style>
+.copy {
+  display: flex;
+  gap: 1rem;
+}
+.item {
+  flex: 1;
+}
+</style>

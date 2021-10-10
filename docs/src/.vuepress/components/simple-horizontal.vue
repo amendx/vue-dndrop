@@ -21,7 +21,7 @@ export default {
 };
 </script>
 <template>
-  <div style="margin: 50px; overflow-x: auto">
+  <div style="overflow-x: auto">
     <Container @drop="onDrop" orientation="horizontal" behaviour="contain">
       <Draggable v-for="item in items" :key="item.id">
         <div class="draggable-item-horizontal">

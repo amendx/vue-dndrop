@@ -28,14 +28,12 @@ export default {
           <th>Lorem</th>
           <th>Ipsum</th>
           <th>Sit</th>
-          <th>Amed</th>
         </tr>
       </thead>
       <Container @drop="onDrop" tag="tbody">
         <Draggable v-for="item in items" :key="item.id" tag="tr">
           <td>Row {{ item.data }} Column 1</td>
           <td>Row {{ item.data }} Column 2</td>
-          <td>Row {{ item.data }} Column 3</td>
           <td>Row {{ item.data }} Column 4</td>
         </Draggable>
       </Container>
@@ -46,7 +44,7 @@ export default {
 <style lang="css" scoped>
 table {
   display: table;
-  /* border-collapse: collapse does not work when rows are dragged (transformed) */
+
   border-collapse: separate;
 }
 
@@ -68,8 +66,7 @@ td {
 td,
 th {
   border: 1px solid #ddd;
-  text-align: left;
-  font-family: monospace;
+  text-align: center;
 }
 
 .table {

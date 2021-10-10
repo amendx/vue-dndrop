@@ -1,3 +1,3 @@
 # Simple horizontal
 
-<simple-horizontal />
+<doc-example title="Horizontal" file="simple-horizontal" />

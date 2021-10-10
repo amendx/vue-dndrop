@@ -1,3 +1,3 @@
 # Form
 
-<form-drag />
+<doc-example title="Form drag" file="form-drag" />

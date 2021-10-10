@@ -113,12 +113,9 @@ export default {
 .groups {
   display: flex;
   justify-content: stretch;
-  margin-top: 50px;
-  margin-right: 50px;
 }
 
 .group {
-  margin-left: 50px;
   flex: 1;
 }
 </style>

@@ -1,3 +1,3 @@
 # Groups
 
-<groups />
+<doc-example title="Groups" file="groups" />

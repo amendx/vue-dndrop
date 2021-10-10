@@ -1,3 +1,3 @@
 # Simple scroller
 
-<simple-scroller />
+<doc-example title="Simple scroller" file="simple-scroller" />

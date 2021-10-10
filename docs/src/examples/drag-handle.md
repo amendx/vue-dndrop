@@ -1,3 +1,3 @@
 # Drag handle
 
-<drag-handle />
+<doc-example title="Drag handle" file="drag-handle" />
