@@ -25,6 +25,6 @@ deploy:
   github_token: $GITHUB_TOKEN_VUE_TRAVIS
     repo: amendx/vue-dndrop
     keep-history: true
-    target-branch: master
+    target-branch: gh-pages
     on:
         branch: master
