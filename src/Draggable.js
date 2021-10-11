@@ -7,12 +7,7 @@ const wrapChild = (createElement, ctx) => {
   ]);
   return createElement(
     tagProps.value,
-    Object.assign(
-      {},
-      {
-        ...tagProps.props,
-      }
-    ),
+    Object.assign({}, { ...tagProps.props }),
     ctx.$slots.default
   );
 };
