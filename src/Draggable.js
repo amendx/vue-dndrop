@@ -1,10 +1,18 @@
 import { getTagProps, validateTagProp } from './utils';
 
 const wrapChild = (createElement, ctx) => {
-  const tagProps = getTagProps(ctx, 'dndrop-draggable-wrapper');
+  const tagProps = getTagProps(ctx, [
+    'dndrop-draggable-wrapper',
+    ctx.dragNotAllowed ? 'dndrop-not-draggable' : '',
+  ]);
   return createElement(
     tagProps.value,
-    Object.assign({}, tagProps.props),
+    Object.assign(
+      {},
+      {
+        ...tagProps.props,
+      }
+    ),
     ctx.$slots.default
   );
 };
@@ -14,10 +22,14 @@ export default {
   props: {
     tag: {
       validator: validateTagProp,
-      default: 'div'
-    }
+      default: 'div',
+    },
+    dragNotAllowed: {
+      type: Boolean,
+      default: false,
+    },
   },
   render: function (createElement) {
     return wrapChild(createElement, this);
-  }
+  },
 };
