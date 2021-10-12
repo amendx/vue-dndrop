@@ -6,16 +6,12 @@
     </section> -->
     <div class="doc-card-content">
       <tab-component>
-        <tab-panel-component
-          :selected="true"
-          name="Pré-visualização"
-          no-transition
-        >
+        <tab-panel-component :selected="true" name="Example" no-transition>
           <div class="doc-card-preview">
             <component :is="component" />
           </div>
         </tab-panel-component>
-        <tab-panel-component name="Código fonte" no-transition>
+        <tab-panel-component name="Source code" no-transition>
           <div class="doc-card-source">
             <tab-component>
               <tab-panel-component
