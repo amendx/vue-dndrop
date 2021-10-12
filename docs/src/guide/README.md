@@ -12,6 +12,7 @@ A Vue drag and drop library.
 
 <p align="center">
 <a href="https://www.npmjs.com/package/vue-dndrop"><img alt="npm" src="https://img.shields.io/npm/v/vue-dndrop.svg?style=flat-square"></a>
+<img src="https://app.travis-ci.com/amendx/vue-dndrop.svg?branch=master"/>
 </p>
 
 ---
