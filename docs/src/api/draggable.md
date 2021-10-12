@@ -8,6 +8,13 @@ Wrapper component for Container's children. Every child element should be wrappe
 
 A Draggable element can accept anything you place in as a child element. Feel free to use your creativity.
 
+Properties define the visual behaviour of the library:
+
+| Property          |           Type            | Default | Description                                              |
+| ----------------- | :-----------------------: | :-----: | -------------------------------------------------------- |
+| :drag-not-allowed |          boolean          | `false` | Property to define if the element can be dragged or not. |
+| :tag              | string or NodeDescription |  `div`  | _See descriptions below_                                 |
+
 ---
 
 ## `tag`
