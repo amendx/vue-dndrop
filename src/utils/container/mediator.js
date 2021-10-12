@@ -395,7 +395,7 @@ function handleMissedDragFrame () {
 function onMouseUp () {
   removeMoveListeners();
   removeReleaseListeners();
-  handleScroll({ reset: true });
+  if (handleScroll && typeof handleScroll === 'function') handleScroll({ reset: true });
   if (cursorStyleElement) {
     removeStyle(cursorStyleElement);
     cursorStyleElement = null;
@@ -488,6 +488,7 @@ function fireOnDragStartEnd (isStart) {
 }
 function initiateDrag (position, cursor) {
   if (grabbedElement !== null) {
+    if (grabbedElement.classList.contains('dndrop-not-draggable')) return;
     isDragging = true;
     const container = (containers.filter(p => grabbedElement.parentElement === p.element)[0]);
     container.setDraggables();
@@ -505,7 +506,7 @@ function initiateDrag (position, cursor) {
     dragListeningContainers = containers.filter(p => p.isDragRelevant(container, draggableInfo.payload));
     draggableInfo.relevantContainers = dragListeningContainers;
     handleDrag = dragHandler(dragListeningContainers);
-    if (handleScroll) {
+    if (handleScroll && typeof handleScroll === 'function') {
       handleScroll({ reset: true, draggableInfo: undefined });
     }
     handleScroll = getScrollHandler(container, dragListeningContainers);
@@ -559,7 +560,7 @@ function registerContainer (container) {
     if (container.isDragRelevant(draggableInfo.container, draggableInfo.payload)) {
       dragListeningContainers.push(container);
       container.prepareDrag(container, dragListeningContainers);
-      if (handleScroll) {
+      if (handleScroll && typeof handleScroll === 'function') {
         handleScroll({ reset: true, draggableInfo: undefined });
       }
       handleScroll = getScrollHandler(container, dragListeningContainers);
@@ -580,7 +581,7 @@ function unregisterContainer (container) {
     const indexInDragListeners = dragListeningContainers.indexOf(container);
     if (indexInDragListeners > -1) {
       dragListeningContainers.splice(indexInDragListeners, 1);
-      if (handleScroll) {
+      if (handleScroll && typeof handleScroll === 'function') {
         handleScroll({ reset: true, draggableInfo: undefined });
       }
       handleScroll = getScrollHandler(container, dragListeningContainers);

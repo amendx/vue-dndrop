@@ -10,6 +10,7 @@ A Vue drag and drop library.
 
 <p align="center">
 <a href="https://www.npmjs.com/package/vue-dndrop"><img alt="npm" src="https://img.shields.io/npm/v/vue-dndrop.svg?style=flat-square"></a>
+<img src="https://app.travis-ci.com/amendx/vue-dndrop.svg?branch=master"/>
 </p>
 
 ## Intro
@@ -54,7 +55,7 @@ npm i vue-dndrop@next
 
 ## Demo
 
-View the **original** docs here:
+Take a look at the full docs here. There's a lot of examples, details and more.
 
 - https://amendx.github.io/vue-dndrop
 
@@ -80,7 +81,7 @@ View the **original** docs here:
 </template>
 
 <script>
-import { Container, Draggable } from "vue-smooth-dnd";
+import { Container, Draggable } from "vue-dndrop";
 import { applyDrag, generateItems } from "./utils";
 export default {
   name: "Simple",
