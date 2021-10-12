@@ -93,7 +93,7 @@ function addStyleToHead () {
   if (typeof (window) !== 'undefined') {
     const head = window.document.head || window.document.getElementsByTagName('head')[0];
     const style = window.document.createElement('style');
-    style.id = 'smooth-dnd-style-definitions';
+    style.id = 'dndrop-style-definitions';
     const cssString = convertToCssString(css);
     style.type = 'text/css';
     if (style.styleSheet) {

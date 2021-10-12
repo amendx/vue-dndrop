@@ -1,0 +1,193 @@
+/**
+ * Custom Styles here.
+ *
+ * ref：https://v1.vuepress.vuejs.org/config/#index-styl
+ */
+
+.home .hero img
+  max-width 450px!important
+
+
+/* demos */
+.draggable-item {
+    flex-direction: row !important;
+    justify-content: space-between;
+  text-align: center;
+   background-color white;
+  border: 1px solid #597ba0aa;
+  border-left: 5px solid #42b883;
+  margin: 5px;
+  padding: 1rem 0;
+   cursor: pointer;
+  border-radius: 4px;
+}
+
+.draggable-item-horizontal {
+    height: 300px;
+    align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 8px;
+  cursor: pointer;
+  user-select: none;
+  background-color: white;
+   border: 1px solid #597ba0aa;
+  border-top: 5px solid #42b883;
+  border-radius: 4px;
+  transition: border-color 0.2s linear;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.draggable-item div, .draggable-item-horizontal div {
+    color: red
+}
+
+.dragging {
+    background-color: yellow;
+   
+}
+
+.card-scene {
+       max-width: 740px;
+    margin: 0 auto;
+    padding: 2rem 2.5rem;
+}
+
+.card-container {
+    padding: 10px;
+    margin: 5px;
+    background-color: #f3f3f3;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 8px;
+    cursor: pointer;
+    user-select: none;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s linear;
+}
+
+.card-text{
+    color: #f2f2f2;
+}
+
+
+.card h3 {
+    color: #f2f2f2;
+    margin: 0;
+}
+
+.card-column-header {
+    font-size: 18px;
+}
+
+.column-drag-handle {
+    cursor: move;
+    padding: 5px;
+}
+
+.card-ghost {
+    transition: transform 0.18s ease;
+    transform: rotateZ(5deg)
+}
+
+.card-ghost-drop {
+    transition: transform 0.18s ease-in-out;
+    transform: rotateZ(0deg)
+}
+
+.opacity-ghost {
+    transition: all .18s ease;
+    opacity: 0.8;
+    background-color: cornflowerblue;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.opacity-ghost-drop {
+    opacity: 1;
+    background-color: white;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.0);
+}
+
+
+.form-docs {
+    display: flex
+}
+
+.form {
+    flex: 3;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 6px;
+}
+
+.form-fields-panel {
+    flex: 1;
+    margin-right: 50px;
+}
+
+
+.form-ghost {
+    transition: 0.18s ease;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.08);
+}
+
+.form-ghost-drop {
+    box-shadow: 0 0 2px 5px rgba(0, 0, 0, 0.0);
+}
+
+.drop-preview {
+  background-color: rgba(150, 150, 200, 0.1);
+  border: 1px dashed #abc;
+  margin: 5px;
+}
+
+.cards-drop-preview {
+  background-color: rgba(150, 150, 200, 0.1);
+  border: 1px dashed #abc;
+  margin: 5px 45px 5px 5px;
+}
+
+
+/* end of demos */
+
+.form {
+}
+
+.form-field {
+    height: 50px;
+    width: 250px;
+    line-height: 30px;
+    vertical-align: middle;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+    cursor: move;
+
+}
+
+.form-line {
+    border: 1px solid #bcdae8ff;
+    padding: 20px 30px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    transition: all .3s ease;
+    transition-property: border-color, background-color;
+    cursor: move;
+}
+
+.form-line.selected {
+    background-color: #f8f9fa;
+}
+
