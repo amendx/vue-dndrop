@@ -3,8 +3,8 @@
 set -e
 
 # build
-npm run docs:build
 cd docs/.vuepress/dist
+npm run build
 
 
 git init
