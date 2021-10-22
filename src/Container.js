@@ -17,8 +17,6 @@ const eventEmitterMap = {
   'drop-not-allowed': 'dropNotAllowed'
 };
 
-const emitsArray = [];
-
 function getContainerOptions (props, context) {
   const options = Object.keys(props).reduce((result, key) => {
     const optionName = key;
@@ -29,7 +27,6 @@ function getContainerOptions (props, context) {
         if (eventEmitterMap[optionName]) {
           result[eventEmitterMap[optionName]] = (params) => {
             context.$emit(optionName, params);
-            emitsArray.push(optionName);
           };
         } else {
           result[optionName] = (...params) => {
@@ -108,7 +105,6 @@ export default {
     'drop-ready': Function,
     dropPlaceholder: [Object, Boolean],
   },
-  emits: emitsArray,
   render: function () {
     const tagProps = getTagProps(this);
     return h(
