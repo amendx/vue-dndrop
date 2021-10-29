@@ -197,9 +197,6 @@ export default {
                   ><strong>#{{ item.id }}</strong></label
                 >
                 <button :class="['kanban-button', `${item.currentStatus}`]">
-                  <!-- <span v-if="notMobile">{{
-                    item.currentStatus || item.corStatus.nome
-                  }}</span> -->
                   {{ item.icon }}
                 </button>
               </div>

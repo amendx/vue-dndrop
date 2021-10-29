@@ -131,7 +131,7 @@ onDrop (dropResult) {
   - **removedIndex** : `number` : index of the removed child. Will be `null` if no item is removed.
   - **addedIndex** : `number` : index to add dropped item. Will be `null` if no item is added.
   - **payload** : `object` : the payload object retrieved by calling [get-child-payload](#get-child-payload) function.
-  - **droppedElement** : `DOMElement` : the DOM element that is moved
+  - **element** : `DOMElement` : the DOM element that is moved
 
 ---
 

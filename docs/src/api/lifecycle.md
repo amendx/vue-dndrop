@@ -49,7 +49,7 @@ dropResult: {
     addedIndex,
     removedIndex,
     payload,
-    droppedElement,
+    element,
 }
 ```
 
