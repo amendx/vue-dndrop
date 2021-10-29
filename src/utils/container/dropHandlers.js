@@ -2,7 +2,7 @@ import { addChildAt, removeChildAt } from './children';
 
 export function domDropHandler ({ element, draggables }) {
   return (dropResult, onDrop) => {
-    const { removedIndex, addedIndex, droppedElement } = dropResult;
+    const { removedIndex, addedIndex, element } = dropResult;
     let removedWrapper = null;
     if (removedIndex !== null) {
       removedWrapper = removeChildAt(element, removedIndex);
@@ -15,7 +15,7 @@ export function domDropHandler ({ element, draggables }) {
       wrapper.appendChild(
         removedWrapper && removedWrapper.firstElementChild
           ? removedWrapper.firstElementChild
-          : droppedElement
+          : element
       );
       addChildAt(element, wrapper, addedIndex);
       if (addedIndex >= draggables.length) {
