@@ -4,8 +4,7 @@
   "description": "vue-dndrop documentation",
   "main": "index.js",
   "authors": {
-    "name": "amendx",
-    "email": "amacve@gmail.com"
+    "name": "amendx"
   },
   "repository": "https://github.com/amendx/vue-dndrop/vue-dndocs",
   "scripts": {
@@ -15,6 +14,6 @@
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.5.3",
-    "vue-dndrop": "1.1.0"
+    "vue-dndrop": "1.1.8"
   }
 }
