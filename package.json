@@ -1,7 +1,7 @@
 {
   "name": "vue-dndrop",
-  "version": "1.1.10",
-  "description": "Vue wrappers for drag n droppin",
+  "version": "1.1.11",
+  "description": "Vue wrappers for drag and drop",
   "author": "amendx && kutlugsahin",
   "repository": {
     "type": "git",
@@ -53,14 +53,14 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
+    "prismjs": "^1.25.0",
+    "raw-loader": "^4.0.2",
     "rollup": "^2.56.2",
     "rollup-plugin-buble": "^0.19.8",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-license": "^2.5.0",
     "rollup-plugin-typescript2": "^0.30.0",
-    "rollup-plugin-uglify": "^6.0.4",
-    "prismjs": "^1.25.0",
-    "raw-loader": "^4.0.2"
+    "rollup-plugin-uglify": "^6.0.4"
   },
   "homepage": "https://github.com/amendx/vue-dndrop#readme"
 }

@@ -19,6 +19,7 @@ function output (ext, format = 'umd') {
     file: `dist/${name}.${ext}`,
     format: format,
     exports: 'named',
+    globals: { vue: 'Vue', h: 'Vue' },
   };
 }
 
@@ -28,7 +29,7 @@ function output (ext, format = 'umd') {
 
 const umd = {
   input: 'src/main.js',
-  external: external,
+  external: [external, 'vue', 'h'],
   output: output('js'),
   plugins: [
     license({
