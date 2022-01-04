@@ -48,10 +48,6 @@ jobs:
           directory: ./docs/src/.vuepress/dist
 
       - name: release
-        if: "$RELEASE_TARGET_BRANCH == 'next'"
-        run: |
-          echo "RELEASE_TARGET_BRANCH: $RELEASE_TARGET_BRANCH"
-          npm publish --tag $RELEASE_TARGET_BRANCH
         run: |
           echo "RELEASE_TARGET_BRANCH: $RELEASE_TARGET_BRANCH"
           npm publish $RELEASE_TARGET_BRANCH
