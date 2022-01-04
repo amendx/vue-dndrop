@@ -10,13 +10,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: "Generate build"
+        run: |
+          npm ci
+          npm run build
+
       - name: Generate static vuepress files
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-      - run: cd docs/
-      - run: npm ci
-      - run: npm run build
+      - run: |
+          cd docs/
+          npm run build
       # cd docs/src/.vuepress/dist
       - name: Init new repo in dist folder and commit generated files
         run: |
