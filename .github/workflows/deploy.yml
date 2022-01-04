@@ -19,6 +19,7 @@ jobs:
 
       - name: Init new repo in dist folder and commit generated files
         run: |
+          ls
           cd docs/src/.vuepress/dist
           git init
           git add -A
