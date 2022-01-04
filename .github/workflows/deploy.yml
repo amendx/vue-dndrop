@@ -1,16 +1,13 @@
 name: release & pages
 on:
-  release:
+  push:
     branches: [master]
-    types: [created]
 jobs:
   publish:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: generate static vuepress files
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
@@ -33,9 +30,8 @@ jobs:
           git add -A
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m 'deploy'
           echo "RELEASE_TARGET_BRANCH: $RELEASE_TARGET_BRANCH"
-          npm --no-git-tag-version version $RELEASE_TAG_NAME
+          git commit -m 'deploy'
         env:
           RELEASE_TARGET_BRANCH: ${{ github.event.release.tag_name }}
 
@@ -46,10 +42,3 @@ jobs:
           branch: gh-pages
           force: true
           directory: ./docs/src/.vuepress/dist
-
-      - name: release
-        run: |
-          echo "RELEASE_TARGET_BRANCH: $RELEASE_TARGET_BRANCH"
-          npm publish $RELEASE_TARGET_BRANCH
-        env:
-          RELEASE_TARGET_BRANCH: ${{ github.event.release.target_commitish }}
