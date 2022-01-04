@@ -1,4 +1,4 @@
-name: Deploy to GitHub pages
+name: deploy & pages
 on:
   push:
     # this might change depending on whether you are publishing a site for a normal repo or a user/organization repo
