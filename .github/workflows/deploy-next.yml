@@ -1,0 +1,25 @@
+name: release tag next
+on:
+  release:
+    branches: [next]
+    types: [created]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - name: install dependencies
+        run: |
+          npm ci
+          npm run build
+      - name: release
+        run: |
+          echo "RELEASE_TARGET_BRANCH: $RELEASE_TARGET_BRANCH"
+          npm publish --tag $RELEASE_TARGET_BRANCH
+        env:
+          RELEASE_TARGET_BRANCH: ${{ github.event.release.target_commitish }}
