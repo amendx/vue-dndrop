@@ -20,7 +20,7 @@ jobs:
       # cd docs/src/.vuepress/dist
       - name: Init new repo in dist folder and commit generated files
         run: |
-        ls
+          ls
           cd docs/
           ls
           cd src/
