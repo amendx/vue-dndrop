@@ -16,7 +16,7 @@ jobs:
           node-version: "12.x"
       - run: |
           cd docs/
-          npm ci
+          npm install
           npm run build
       # cd docs/src/.vuepress/dist
       - name: Init new repo in dist folder and commit generated files
