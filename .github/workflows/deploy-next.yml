@@ -1,4 +1,4 @@
-name: release tag next
+name: release @next
 on:
   release:
     branches: [next]
