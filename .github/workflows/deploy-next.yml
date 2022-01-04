@@ -1,4 +1,4 @@
-name: release & pages
+name: release tag next
 on:
   release:
     branches: [next]
