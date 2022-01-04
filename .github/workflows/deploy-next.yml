@@ -17,6 +17,10 @@ jobs:
         run: |
           npm ci
           npm run build
+          echo "RELEASE_TAG_NAME: $RELEASE_TAG_NAME"
+          npm --no-git-tag-version version $RELEASE_TAG_NAME
+        env:
+        RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
 
       - name: release
         run: |
