@@ -1,4 +1,4 @@
-name: release
+name: release & pages
 on:
   release:
     branches: [master]
