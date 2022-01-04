@@ -1,9 +1,6 @@
 <template>
   <component v-if="renderOnly" :is="component" />
   <div v-else class="doc-card">
-    <!-- <section v-if="title" class="doc-card-header">
-      <div class="doc-card-header__title">{{ title }}</div>
-    </section> -->
     <div class="doc-card-content">
       <tab-component>
         <tab-panel-component :selected="true" name="Example" no-transition>

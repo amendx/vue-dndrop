@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-  <div class="simple-page">
+  <div :class="['simple-page', 'limited-height']">
     <Container
       @drop="onDrop"
       drag-class="opacity-ghost"
@@ -36,3 +36,10 @@ export default {
     </Container>
   </div>
 </template>
+
+<style scoped>
+.limited-height {
+  height: 60vh;
+  overflow: auto;
+}
+</style>
