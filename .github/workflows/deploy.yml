@@ -15,9 +15,15 @@ jobs:
         with:
           node-version: "12.x"
 
-      - name: install dependencies and build
+      - name: install dependencies
         run: |
           npm ci
+          npm run build
+
+      - name: generate docs
+        run: |
+          cd docs/
+          npm install
           npm run build
 
       - name: init new repo in dist folder and commit generated files
@@ -33,9 +39,17 @@ jobs:
         env:
           RELEASE_TARGET_BRANCH: ${{ github.event.release.tag_name }}
 
+      - name: force push to destination branch
+        uses: ad-m/github-push-action@v0.5.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          force: true
+          directory: ./docs/src/.vuepress/dist
+
       - name: release
         run: |
           echo "RELEASE_TARGET_BRANCH: $RELEASE_TARGET_BRANCH"
-          yarn publish --tag $RELEASE_TARGET_BRANCH
+          npm publish $RELEASE_TARGET_BRANCH
         env:
           RELEASE_TARGET_BRANCH: ${{ github.event.release.target_commitish }}
