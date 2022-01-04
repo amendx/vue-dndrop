@@ -33,9 +33,8 @@ jobs:
           git add -A
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m 'deploy'
+          git commit -m 'deploy on $RELEASE_TARGET_BRANCH '
           echo "RELEASE_TARGET_BRANCH: $RELEASE_TARGET_BRANCH"
-          npm --no-git-tag-version version $RELEASE_TAG_NAME
         env:
           RELEASE_TARGET_BRANCH: ${{ github.event.release.tag_name }}
 
@@ -46,10 +45,3 @@ jobs:
           branch: gh-pages
           force: true
           directory: ./docs/src/.vuepress/dist
-
-      - name: release
-        run: |
-          echo "RELEASE_TARGET_BRANCH: $RELEASE_TARGET_BRANCH"
-          npm publish $RELEASE_TARGET_BRANCH
-        env:
-          RELEASE_TARGET_BRANCH: ${{ github.event.release.target_commitish }}
