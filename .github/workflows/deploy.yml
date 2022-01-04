@@ -20,15 +20,7 @@ jobs:
       # cd docs/src/.vuepress/dist
       - name: Init new repo in dist folder and commit generated files
         run: |
-          ls
-          cd docs/
-          ls
-          cd src/
-          ls
-          cd .vuepress/
-          ls
-          cd dist
-          ls
+          cd docs/src/.vuepress/dist
           git init
           git add -A
           git config --local user.email "action@github.com"
