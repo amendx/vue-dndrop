@@ -16,12 +16,12 @@ jobs:
           node-version: "12.x"
 
       - name: Install dependencies
-      - run: |
+         run: |
           npm ci
           npm run build
 
       - name: Generate docs
-      - run: |
+        run: |
           cd docs/
           npm install
           npm run build
