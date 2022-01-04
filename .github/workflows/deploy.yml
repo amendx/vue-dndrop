@@ -14,13 +14,21 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
+      - run: cd docs/
       - run: npm ci
       - run: npm run build
-
+      # cd docs/src/.vuepress/dist
       - name: Init new repo in dist folder and commit generated files
         run: |
+        ls
+          cd docs/
           ls
-          cd docs/src/.vuepress/dist
+          cd src/
+          ls
+          cd .vuepress/
+          ls
+          cd dist
+          ls
           git init
           git add -A
           git config --local user.email "action@github.com"
