@@ -14,10 +14,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm run build
+
+      - name: Generate docs
       - run: |
           cd docs/
           npm install
           npm run build
+
       # cd docs/src/.vuepress/dist
       - name: Init new repo in dist folder and commit generated files
         run: |
