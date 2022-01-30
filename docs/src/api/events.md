@@ -22,7 +22,7 @@ onDragStart (dragResult) {
 
 - **dragResult** : `object`
 
-  - **payload** : `object` : the payload object that is returned by [get-child-payload](#get-child-payload). It will be undefined in case get-child-payload is not set.
+  - **payload** : `object` : the payload object that is returned by [get-child-payload](https://amendx.github.io/vue-dndrop/api/callbacks.html#get-child-payload). It will be undefined in case get-child-payload is not set.
   - **isSource** : `boolean` : true if it is called by the container which drag starts from otherwise false.
   - **willAcceptDrop** : `boolean` : true if the dragged item can be dropped into the container, otherwise false.
 
@@ -47,7 +47,7 @@ onDragEnd (dragResult) {
 - **dragResult** : `object`
 
   - **isSource** : `boolean` : true if it is called by the container which drag starts from, otherwise false.
-  - **payload** : `object` : the payload object that is returned by [get-child-payload](#get-child-payload) function. It will be undefined in case get-child-payload is not set.
+  - **payload** : `object` : the payload object that is returned by [get-child-payload](https://amendx.github.io/vue-dndrop/api/callbacks.html#get-child-payload) function. It will be undefined in case get-child-payload is not set.
   - **willAcceptDrop** : `boolean` : true if the dragged item can be dropped into the container, otherwise false.
 
 ---
@@ -130,7 +130,7 @@ onDrop (dropResult) {
 
   - **removedIndex** : `number` : index of the removed child. Will be `null` if no item is removed.
   - **addedIndex** : `number` : index to add dropped item. Will be `null` if no item is added.
-  - **payload** : `object` : the payload object retrieved by calling [get-child-payload](#get-child-payload) function.
+  - **payload** : `object` : the payload object retrieved by calling [get-child-payload](https://amendx.github.io/vue-dndrop/api/callbacks.html#get-child-payload) function.
   - **element** : `DOMElement` : the DOM element that is moved
 
 ---
@@ -151,5 +151,5 @@ dropNotAllowed ({payload, container}) {
 
 #### Parameters
 
-- **payload** : `object` : the payload object that is returned by [get-child-payload](#get-child-payload). It will be undefined in case get-child-payload is not set.
+- **payload** : `object` : the payload object that is returned by [get-child-payload](https://amendx.github.io/vue-dndrop/api/callbacks.html#get-child-payload). It will be undefined in case get-child-payload is not set.
 - **container** : `object` : return the container which the current payload was unable to be dropped.
