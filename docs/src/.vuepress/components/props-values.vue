@@ -46,7 +46,7 @@ export default {
           <td style="text-align:center">string</td>
           <td style="text-align:center"><code>move</code></td>
           <td class="prop">
-            Property to describe weather the dragging item will be moved or
+            Property to describe wether the dragging item will be moved or
             copied to target container. Can be <strong>move</strong> or
             <strong>copy</strong> or <strong>drop-zone</strong> or
             <strong>contain</strong>.
@@ -65,7 +65,7 @@ export default {
           <td class="prop">
             Draggables can be moved between the containers having the same group
             names. If not set container will not accept drags from outside. This
-            behaviour can be overriden by shouldAcceptDrop function. See below.
+            behaviour can be overwritten by shouldAcceptDrop function. See below.
           </td>
         </tr>
         <tr>

@@ -3,7 +3,7 @@ import { Container, Draggable } from "../../../../src/main.js";
 import { applyDrag, generateItems } from "../utils/helpers";
 
 export default {
-  name: "Simple",
+  name: "SimpleTagless",
 
   components: { Container, Draggable },
 
@@ -38,14 +38,13 @@ export default {
     <Container
       :get-ghost-parent="getGhostParent"
       :get-child-payload="getChildPayload"
+      remove-on-drop-out
       @drop="onDrop"
       @drop-ready="onDropReady"
       @drop-not-allowed="dropNotAllowed"
     >
       <Draggable v-for="item in items" :key="item.id">
-        <div class="draggable-item">
-          {{ item.data }}
-        </div>
+        {{ item.data }}
       </Draggable>
     </Container>
   </div>

@@ -4,7 +4,7 @@ Callbacks provide additional logic and checks before and during user interaction
 
 ---
 
-### `get-child-payload()`
+## `get-child-payload()`
 
 The function to be called to get the payload object to be passed **onDrop** function.
 
@@ -20,17 +20,16 @@ getChildPayload (index) {
 }
 ```
 
-#### Parameters
+### Parameters
 
 - **index** : `number` : index of the child item
-
-#### Returns
+### Returns
 
 - **payload** : `object`
 
 ---
 
-### `should-accept-drop()`
+## `should-accept-drop()`
 
 The function to be called by all containers before drag starts to determine the containers to which the drop is possible. Setting this function will override the **group-name** property and only the return value of this function will be taken into account.
 
@@ -44,18 +43,18 @@ shouldAcceptDrop (sourceContainerOptions, payload) {
 }
 ```
 
-#### Parameters
+### Parameters
 
 - **sourceContainerOptions** : `object` : options of the source container. (parent container of the dragged item)
 - **payload** : `object` : the payload object retrieved by calling [get-child-payload](#get-child-payload) function.
 
-#### Returns
+### Returns
 
 - **boolean** : **true / false**
 
 ---
 
-### `should-animate-drop()`
+## `should-animate-drop()`
 
 The function to be called by the target container to which the dragged item will be dropped.
 Sometimes dragged item's dimensions are not suitable with the target container and dropping animation can be wierd. So it can be disabled by returning **false**. If not set drop animations are enabled.
@@ -70,18 +69,18 @@ shouldAnimateDrop (sourceContainerOptions, payload) {
 }
 ```
 
-#### Parameters
+### Parameters
 
 - **sourceContainerOptions** : `object` : options of the source container. (parent container of the dragged item)
 - **payload** : `object` : the payload object retrieved by calling [get-child-payload](#get-child-payload) function.
 
-#### Returns
+### Returns
 
 - **boolean** : **true / false**
 
 ---
 
-### `get-ghost-parent()`
+## `get-ghost-parent()`
 
 The function to be called to get the element that the dragged ghost will be appended. Default parent element is the container itself.
 The ghost element is positioned as 'fixed' and appended to given parent element.
@@ -97,6 +96,6 @@ getGhostParent() {
 }
 ```
 
-#### Returns
+### Returns
 
 - **Element** : **Any DOM element that the ghost will be appended in**

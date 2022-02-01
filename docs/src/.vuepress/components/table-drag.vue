@@ -1,5 +1,5 @@
 <script>
-import { Container, Draggable } from "vue-dndrop";
+import { Container, Draggable } from "../../../../src/main.js";
 import { applyDrag, generateItems } from "../utils/helpers";
 
 export default {
@@ -14,8 +14,15 @@ export default {
   },
 
   methods: {
+    getGhostParent() {
+      return  document.querySelector("tbody");
+      
+    },
     onDrop(dropResult) {
       this.items = applyDrag(this.items, dropResult);
+    },
+       onDropReady(dropResult) {
+      console.log("drop ready", dropResult);
     },
   },
 };
@@ -30,11 +37,11 @@ export default {
           <th>Sit</th>
         </tr>
       </thead>
-      <Container @drop="onDrop" tag="tbody">
-        <Draggable v-for="item in items" :key="item.id" tag="tr">
+      <Container @drop="onDrop" tag="tbody" @drop-ready="onDropReady"  lock-axis="y">
+        <Draggable v-for="item in items" :key="item.id" tag="tr" style="height: 30px;">
           <td>Row {{ item.data }} Column 1</td>
           <td>Row {{ item.data }} Column 2</td>
-          <td>Row {{ item.data }} Column 4</td>
+          <td>Row {{ item.data }} Column 3</td>
         </Draggable>
       </Container>
     </table>
