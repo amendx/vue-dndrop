@@ -1,5 +1,5 @@
 <script>
-import { Container, Draggable } from "vue-dndrop";
+import { Container, Draggable } from "../../../../src/main.js";
 import { applyDrag, generateItems } from "../utils/helpers";
 
 export default {
@@ -34,11 +34,13 @@ export default {
     <Container
       :get-ghost-parent="getGhostParent"
       :remove-on-drop-out="true"
+      container-class="class-container"
+      tag="article"
       @drop="onDrop"
       @drop-ready="onDropReady"
       @drop-not-allowd="dropNotAllowed"
     >
-      <Draggable v-for="item in items" :key="item.id">
+      <Draggable v-for="item in items" :key="item.id" tag="span">
         <div class="draggable-item">
           {{ item.data }}
         </div>

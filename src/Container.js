@@ -1,12 +1,11 @@
 /* eslint-disable curly */
-import smoothDnD from './utils/container/container.js';
+import wrapper from './utils/container/wrapper.js';
 import { reactDropHandler } from './utils/container/dropHandlers';
 import { getTagProps, validateTagProp } from './utils';
-smoothDnD.dropHandler = reactDropHandler().handler;
-smoothDnD.wrapChild = false;
+wrapper.dropHandler = reactDropHandler().handler;
+wrapper.wrapChild = false;
 
 const eventEmitterMap = {
-  // eslint-disable-next-line quote-props
   drop: 'onDrop',
   'drag-end': 'onDragEnd',
   'drag-start': 'onDragStart',
@@ -52,7 +51,7 @@ export default {
   name: 'Container',
   mounted () {
     this.containerElement = this.$refs.container || this.$el;
-    this.container = smoothDnD(this.containerElement, mapOptions(this));
+    this.container = wrapper(this.containerElement, mapOptions(this));
   },
   updated () {
     if (
@@ -63,7 +62,7 @@ export default {
         this.container.dispose();
       }
       this.containerElement = this.$refs.container || this.$el;
-      this.container = smoothDnD(this.containerElement, mapOptions(this));
+      this.container = wrapper(this.containerElement, mapOptions(this));
       return;
     }
 
@@ -103,6 +102,10 @@ export default {
     getGhostParent: Function,
     'drop-ready': Function,
     dropPlaceholder: [Object, Boolean],
+    containerClass: {
+      type: String,
+      default: 'dndrop-draggable-wrapper'
+    }
   },
   render: function (createElement) {
     const tagProps = getTagProps(this);

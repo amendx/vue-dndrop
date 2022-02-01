@@ -2,13 +2,14 @@
 
 import { getScrollingAxis, hasClass, getVisibleRect } from './utils';
 import { preventAutoScrollClass } from './constants';
-const maxSpeed = 1500; // px/s
+const maxSpeed = 1500; // value on px per sec.
 
 const ScrollAxis = {
   x: 'x',
   y: 'y',
   xy: 'xy'
 };
+
 function getScrollParams (position, axis, rect) {
   const { left, right, top, bottom } = rect;
   const { x, y } = position;

@@ -4,8 +4,8 @@ export const defaultGroupName = '@@dndrop-default-group@@';
 export const wrapperClass = 'dndrop-draggable-wrapper';
 export const defaultGrabHandleClass = 'dndrop-default-grap-handle';
 export const animationClass = 'animated';
-export const translationValue = '__smooth_dnd_draggable_translation_value';
-export const visibilityValue = '__smooth_dnd_draggable_visibility_value';
+export const translationValue = 'dndrop_draggable_translation_value';
+export const visibilityValue = 'dndrop_draggable_visibility_value';
 export const ghostClass = 'dndrop-ghost';
 
 export const containerClass = 'dndrop-container';
@@ -14,7 +14,7 @@ export const extraSizeForInsertion = 'dndrop-extra-size-for-insertion';
 export const stretcherElementClass = 'dndrop-stretcher-element';
 export const stretcherElementInstance = 'dndrop-stretcher-instance';
 
-export const isDraggableDetached = 'smoth-dnd-is-draggable-detached';
+export const isDraggableDetached = 'dndrop-is-draggable-detached';
 
 export const disbaleTouchActions = 'dndrop-disable-touch-action';
 export const noUserSelectClass = 'dndrop-no-user-select';

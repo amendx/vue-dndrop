@@ -1,6 +1,5 @@
 import { extraSizeForInsertion, translationValue, visibilityValue } from './constants';
 import * as Utils from './utils';
-/* eslint-disable no-undef */
 const horizontalMap = {
   size: 'offsetWidth',
   distanceToParent: 'offsetLeft',

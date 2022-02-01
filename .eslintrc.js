@@ -1,14 +1,14 @@
 module.exports = {
   root: true,
   parserOptions: {
-    parser: "babel-eslint",
+    parser: 'babel-eslint',
   },
   env: {
     browser: true,
   },
-  extends: "standard",
+  extends: 'standard',
   rules: {
-    "comma-dangle": 0,
-    semi: [2, "always"],
+    'comma-dangle': 0,
+    semi: [2, 'always'],
   },
 };
