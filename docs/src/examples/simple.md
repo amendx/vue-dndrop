@@ -2,12 +2,6 @@
 
 > If a `Container` does **not** bind with [:get-child-payload](/api/callbacks.html#get-child-payload), the `element` returned inside both `@drop` and `@dropReady` come as `undefined`.
 
-::: tip Helpers
-
-You can also find the helpers functions [here](/examples/utils.html)
-
-:::
-
 <doc-example title="Simple" file="simple" />
 
 ::: details Click here to expand the code for the helpers functions
