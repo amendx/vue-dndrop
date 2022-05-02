@@ -9,7 +9,8 @@
   },
   "contributors": [
     "Dave Stewart (https://github.com/davestewart)",
-    "Kurt Lugsahin (https://github.com/kutlugsahin)"
+    "Kurt Lugsahin (https://github.com/kutlugsahin)",
+    "Amanda Esmeraldo (https://github.com/amendx)"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
