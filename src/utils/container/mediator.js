@@ -304,6 +304,7 @@ function onMouseDown (event) {
           window.document.removeEventListener('mouseup', onMouseUp);
         };
         window.document.addEventListener('mouseup', onMouseUp);
+        window.document.addEventListener('touchend', onMouseUp);
         handleDragStartConditions(e, container.getOptions().dragBeginDelay, () => {
           Utils.clearSelection();
           initiateDrag(e, Utils.getElementCursor(event.target));
