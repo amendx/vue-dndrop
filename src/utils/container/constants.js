@@ -16,7 +16,7 @@ export const stretcherElementInstance = 'dndrop-stretcher-instance';
 
 export const isDraggableDetached = 'smoth-dnd-is-draggable-detached';
 
-export const disbaleTouchActions = 'dndrop-disable-touch-action';
+export const disableTouchActions = 'dndrop-disable-touch-action';
 export const noUserSelectClass = 'dndrop-no-user-select';
 
 export const preventAutoScrollClass = 'dndrop-prevent-auto-scroll-class';
