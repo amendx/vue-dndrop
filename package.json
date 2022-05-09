@@ -36,7 +36,6 @@
     "dev": "rollup -c build/rollup.js -w",
     "build": "rollup -c build/rollup.js",
     "docs": "cd docs && npm run dev",
-    "deploy": "cd docs && npm run deploy",
     "lint": "eslint src/*"
   },
   "license": "MIT",
