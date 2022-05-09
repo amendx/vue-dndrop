@@ -52,9 +52,13 @@ npm i vue-dndrop
 npm i vue-dndrop@next
 ```
 
-###### This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain javascript now.
+> This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain javascript now.
 
-> Feel free to contribute.
+### Contributors
+
+<a href="https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=amendx/vue-dndrop"/>
+</a>
 
 ---
 
