@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import {
   animationClass,
   containerClass,
