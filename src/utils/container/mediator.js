@@ -302,16 +302,15 @@ function onMouseDown (event) {
       }
       if (startDrag) {
         container.layout.invalidate();
-        Utils.addClass(window.document.body, constants.disbaleTouchActions);
+        Utils.addClass(window.document.body, constants.disableTouchActions);
         Utils.addClass(window.document.body, constants.noUserSelectClass);
         const onMouseUp = () => {
-          Utils.removeClass(window.document.body, constants.disbaleTouchActions);
+          Utils.removeClass(window.document.body, constants.disableTouchActions);
           Utils.removeClass(window.document.body, constants.noUserSelectClass);
           window.document.removeEventListener('mouseup', onMouseUp);
         };
         window.document.addEventListener('mouseup', onMouseUp);
-      }
-      if (startDrag) {
+        window.document.addEventListener('touchend', onMouseUp);
         handleDragStartConditions(e, container.getOptions().dragBeginDelay, () => {
           Utils.clearSelection();
           initiateDrag(e, Utils.getElementCursor(event.target));
