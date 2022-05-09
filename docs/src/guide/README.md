@@ -13,8 +13,11 @@ A Vue drag and drop library.
 <p align="center">
 <a href="https://www.npmjs.com/package/vue-dndrop"><img alt="npm" src="https://img.shields.io/npm/v/vue-dndrop.svg?style=flat-square"></a>
 <img src="https://img.shields.io/npm/dt/vue-dndrop" alt="npm downloads" />
+<img src="https://img.shields.io/github/license/amendx/vue-dndrop.svg" alt="mit license" />
+<img src="https://badgen.net/github/last-commit/amendx/vue-dndrop" alt="commit" />
 <img src="https://github.com/amendx/vue-dndrop/actions/workflows/deploy.yml/badge.svg" alt="github pages" />
 </p>
+
 
 ---
 
@@ -32,7 +35,7 @@ Take a look at our [examples here](/examples/)
 
 > These are the special people who took some time to improve our [examples](/examples/)
 
-<a href="https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
+<a href="https://github.com/amendx/vue-dndrop/contributors">
   <img src="https://contrib.rocks/image?repo=amendx/vue-dndrop"/>
 </a>
 
