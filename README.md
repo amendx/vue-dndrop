@@ -56,7 +56,7 @@ npm i vue-dndrop@next
 
 ### Contributors
 
-<a href="https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
+<a href="https://github.com/amendx/vue-dndrop/contributors">
   <img src="https://contrib.rocks/image?repo=amendx/vue-dndrop"/>
 </a>
 
