@@ -32,6 +32,12 @@ function addGrabListeners () {
     window.document.addEventListener(e, onMouseDown, { passive: false });
   });
 }
+
+function removeGrabListeners () {
+  grabEvents.forEach(e => {
+    window.document.addEventListener(e, onMouseUp, { passive: false });
+  });
+}
 function addMoveListeners () {
   moveEvents.forEach(e => {
     window.document.addEventListener(e, onMouseMove, { passive: false });
@@ -296,16 +302,15 @@ function onMouseDown (event) {
       }
       if (startDrag) {
         container.layout.invalidate();
-        Utils.addClass(window.document.body, constants.disbaleTouchActions);
+        Utils.addClass(window.document.body, constants.disableTouchActions);
         Utils.addClass(window.document.body, constants.noUserSelectClass);
         const onMouseUp = () => {
-          Utils.removeClass(window.document.body, constants.disbaleTouchActions);
+          Utils.removeClass(window.document.body, constants.disableTouchActions);
           Utils.removeClass(window.document.body, constants.noUserSelectClass);
           window.document.removeEventListener('mouseup', onMouseUp);
         };
         window.document.addEventListener('mouseup', onMouseUp);
-      }
-      if (startDrag) {
+        window.document.addEventListener('touchend', onMouseUp);
         handleDragStartConditions(e, container.getOptions().dragBeginDelay, () => {
           Utils.clearSelection();
           initiateDrag(e, Utils.getElementCursor(event.target));
@@ -395,6 +400,7 @@ function handleMissedDragFrame () {
 function onMouseUp () {
   removeMoveListeners();
   removeReleaseListeners();
+  removeGrabListeners();
   if (handleScroll && typeof handleScroll === 'function') handleScroll({ reset: true });
   if (cursorStyleElement) {
     removeStyle(cursorStyleElement);

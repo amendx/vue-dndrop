@@ -1,5 +1,5 @@
 <script>
-import { Container, Draggable, smoothDnD } from "vue-dndrop";
+import { Container, Draggable } from "vue-dndrop";
 import { applyDrag, generateItems } from "../utils/helpers";
 
 export default {

@@ -234,11 +234,13 @@ function handleDrop ({ element, draggables, layout, getOptions }) {
               : addedIndex
             : null;
 
+        const { payload, element } = draggableInfo;
+
         const dropHandlerParams = {
           removedIndex,
           addedIndex: actualAddIndex,
-          payload: draggableInfo.payload,
-          element: draggableInfo.element.firstElementChild,
+          payload,
+          element: element.firstElementChild || element,
         };
         const shouldHandleDrop =
           !draggableInfo.container.getOptions().fireRelatedEventsOnly ||
@@ -748,7 +750,7 @@ function fireOnDropReady ({ getOptions }) {
         addedIndex: adjustedAddedIndex,
         removedIndex,
         payload,
-        element: element ? element.firstElementChild : undefined,
+        element: element ? (element.firstElementChild || element) : undefined,
       });
     }
   };

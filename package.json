@@ -9,7 +9,8 @@
   },
   "contributors": [
     "Dave Stewart (https://github.com/davestewart)",
-    "Kurt Lugsahin (https://github.com/kutlugsahin)"
+    "Kurt Lugsahin (https://github.com/kutlugsahin)",
+    "Amanda Esmeraldo (https://github.com/amendx)"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
@@ -38,7 +39,6 @@
     "dev": "rollup -c build/rollup.js -w",
     "build": "rollup -c build/rollup.js",
     "docs": "cd docs && npm run dev",
-    "deploy": "cd docs && npm run deploy",
     "lint": "eslint src/*"
   },
   "license": "MIT",

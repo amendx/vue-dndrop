@@ -11,6 +11,8 @@ A Vue drag and drop library.
 <p align="center">
 <a href="https://www.npmjs.com/package/vue-dndrop"><img alt="npm" src="https://img.shields.io/npm/v/vue-dndrop.svg?style=flat-square"></a>
 <img src="https://img.shields.io/npm/dt/vue-dndrop" alt="npm downloads" />
+<img src="https://img.shields.io/github/license/amendx/vue-dndrop.svg" alt="mit license" />
+<img src="https://badgen.net/github/last-commit/amendx/vue-dndrop" alt="commit" />
 <img src="https://github.com/amendx/vue-dndrop/actions/workflows/deploy.yml/badge.svg" alt="github pages" />
 </p>
 
@@ -50,9 +52,13 @@ npm i vue-dndrop@next
 npm i vue-dndrop@next
 ```
 
-###### This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain javascript now.
+> This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain javascript now.
 
-> Feel free to contribute.
+### Contributors
+
+<a href="https://github.com/amendx/vue-dndrop/contributors">
+  <img src="https://contrib.rocks/image?repo=amendx/vue-dndrop"/>
+</a>
 
 ---
 
@@ -114,9 +120,9 @@ export default {
 | Property                  |           Type            |            Default            | Description                                                                                                                                                                                                   |
 | ------------------------- | :-----------------------: | :---------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | :orientation              |          string           |          `vertical`           | Orientation of the container. Can be **horizontal** or **vertical**.                                                                                                                                          |
-| :behaviour                |          string           |            `move`             | Property to describe weather the dragging item will be moved or copied to target container. Can be **move** or **copy** or **drop-zone** or **contain**.                                                      |
+| :behaviour                |          string           |            `move`             | Property to describe wether the dragging item will be moved or copied to target container. Can be **move** or **copy** or **drop-zone** or **contain**.                                                      |
 | :tag                      | string or NodeDescription |             `div`             | _See descriptions below_                                                                                                                                                                                      |
-| :group-name               |          string           |          `undefined`          | Draggables can be moved between the containers having the same group names. If not set container will not accept drags from outside. This behaviour can be overriden by shouldAcceptDrop function. See below. |
+| :group-name               |          string           |          `undefined`          | Draggables can be moved between the containers having the same group names. If not set container will not accept drags from outside. This behaviour can be overwritten by shouldAcceptDrop function. See below. |
 | :lock-axis                |          string           |          `undefined`          | Locks the movement axis of the dragging. Possible values are **x**, **y** or **undefined**.                                                                                                                   |
 | :drag-handle-selector     |          string           |          `undefined`          | Css selector to test for enabling dragging. If not given item can be grabbed from anywhere in its boundaries.                                                                                                 |
 | :non-drag-area-selector   |          string           |          `undefined`          | Css selector to prevent dragging. Can be useful when you have form elements or selectable text somewhere inside your draggable item. It has a precedence over **dragHandleSelector**.                         |
