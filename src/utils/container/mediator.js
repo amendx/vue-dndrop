@@ -32,6 +32,12 @@ function addGrabListeners () {
     window.document.addEventListener(e, onMouseDown, { passive: false });
   });
 }
+
+function removeGrabListeners () {
+  grabEvents.forEach(e => {
+    window.document.addEventListener(e, onMouseUp, { passive: false });
+  });
+}
 function addMoveListeners () {
   moveEvents.forEach(e => {
     window.document.addEventListener(e, onMouseMove, { passive: false });
@@ -395,6 +401,7 @@ function handleMissedDragFrame () {
 function onMouseUp () {
   removeMoveListeners();
   removeReleaseListeners();
+  removeGrabListeners();
   if (handleScroll && typeof handleScroll === 'function') handleScroll({ reset: true });
   if (cursorStyleElement) {
     removeStyle(cursorStyleElement);
