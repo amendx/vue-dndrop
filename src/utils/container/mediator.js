@@ -308,6 +308,7 @@ function onMouseDown (event) {
           Utils.removeClass(window.document.body, constants.disableTouchActions);
           Utils.removeClass(window.document.body, constants.noUserSelectClass);
           window.document.removeEventListener('mouseup', onMouseUp);
+          window.document.removeEventListener('touchend', onMouseUp);
         };
         window.document.addEventListener('mouseup', onMouseUp);
         window.document.addEventListener('touchend', onMouseUp);
