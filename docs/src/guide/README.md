@@ -28,8 +28,16 @@ Take a look at our [examples here](/examples/)
 
 > Don't forget to use [vue-devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=pt-BR) for a better experience
 
-## You can submit an **issue**, a **PR**, anything, anytime. :sparkles:
+### Contributors
 
-> Feel free to **contribute** with anything unusual, questions, sugestions and everything, we're here to improve and learn.
+> These are the special people who took some time to improve our [examples](/examples/)
+
+<a href="https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=amendx/vue-dndrop"/>
+</a>
+
+:::tip
+Feel free to **contribute** with anything unusual, questions, sugestions and everything, we're here to improve and learn.
+:::
 
 ---
