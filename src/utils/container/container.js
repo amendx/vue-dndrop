@@ -42,9 +42,6 @@ function isDragRelevant ({ element, getOptions }) {
   return function (sourceContainer, payload) {
     const options = getOptions();
 
-    if (options.shouldAcceptDrop) {
-      return options.shouldAcceptDrop(sourceContainer.getOptions(), payload);
-    }
     const sourceOptions = sourceContainer.getOptions();
     if (options.behaviour === 'copy') return false;
 
@@ -59,6 +56,10 @@ function isDragRelevant ({ element, getOptions }) {
       sourceOptions.groupName === options.groupName
     ) {
       return true;
+    }
+
+    if (options.shouldAcceptDrop) {
+      return options.shouldAcceptDrop(sourceContainer.getOptions(), payload);
     }
 
     return false;
