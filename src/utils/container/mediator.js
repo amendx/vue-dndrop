@@ -35,7 +35,7 @@ function addGrabListeners () {
 
 function removeGrabListeners () {
   grabEvents.forEach(e => {
-    window.document.addEventListener(e, onMouseUp, { passive: false });
+    window.document.removeEventListener(e, onMouseDown, { passive: false });
   });
 }
 function addMoveListeners () {
