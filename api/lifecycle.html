@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lifecycle | Documentation - vue-dndrop</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="vue-dndrop documentation">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/vue-dndrop/assets/css/1.styles.c2b1713c.css" as="style"><link rel="preload" href="/vue-dndrop/assets/js/app.0014c683.js" as="script"><link rel="preload" href="/vue-dndrop/assets/js/7.f2eec454.js" as="script"><link rel="preload" href="/vue-dndrop/assets/js/39.83cf11ca.js" as="script"><link rel="prefetch" href="/vue-dndrop/assets/js/0.16e66b5b.js"><link rel="prefetch" href="/vue-dndrop/assets/js/10.2c213406.js"><link rel="prefetch" href="/vue-dndrop/assets/js/11.6ee15093.js"><link rel="prefetch" href="/vue-dndrop/assets/js/12.3ecee288.js"><link rel="prefetch" href="/vue-dndrop/assets/js/13.f75448e8.js"><link rel="prefetch" href="/vue-dndrop/assets/js/14.c3477c4b.js"><link rel="prefetch" href="/vue-dndrop/assets/js/15.c45c7e84.js"><link rel="prefetch" href="/vue-dndrop/assets/js/16.0b229386.js"><link rel="prefetch" href="/vue-dndrop/assets/js/17.51781afa.js"><link rel="prefetch" href="/vue-dndrop/assets/js/18.a8dff6ea.js"><link rel="prefetch" href="/vue-dndrop/assets/js/19.572c6749.js"><link rel="prefetch" href="/vue-dndrop/assets/js/2.967ebf37.js"><link rel="prefetch" href="/vue-dndrop/assets/js/20.b596da46.js"><link rel="prefetch" href="/vue-dndrop/assets/js/21.d22fefc3.js"><link rel="prefetch" href="/vue-dndrop/assets/js/22.b3efd3f8.js"><link rel="prefetch" href="/vue-dndrop/assets/js/23.e43457e9.js"><link rel="prefetch" href="/vue-dndrop/assets/js/24.27d9d530.js"><link rel="prefetch" href="/vue-dndrop/assets/js/25.cfa2f960.js"><link rel="prefetch" href="/vue-dndrop/assets/js/26.f7b69282.js"><link rel="prefetch" href="/vue-dndrop/assets/js/27.b028a9f1.js"><link rel="prefetch" href="/vue-dndrop/assets/js/28.ccfeee8d.js"><link rel="prefetch" href="/vue-dndrop/assets/js/29.cd02fce4.js"><link rel="prefetch" href="/vue-dndrop/assets/js/3.d47fb579.js"><link rel="prefetch" href="/vue-dndrop/assets/js/30.c6fbc637.js"><link rel="prefetch" href="/vue-dndrop/assets/js/31.f2e4e67c.js"><link rel="prefetch" href="/vue-dndrop/assets/js/32.17a54db1.js"><link rel="prefetch" href="/vue-dndrop/assets/js/33.b347e1bb.js"><link rel="prefetch" href="/vue-dndrop/assets/js/34.28af2a92.js"><link rel="prefetch" href="/vue-dndrop/assets/js/35.9cb9ef72.js"><link rel="prefetch" href="/vue-dndrop/assets/js/36.350bd887.js"><link rel="prefetch" href="/vue-dndrop/assets/js/37.9a20949b.js"><link rel="prefetch" href="/vue-dndrop/assets/js/38.f68f9260.js"><link rel="prefetch" href="/vue-dndrop/assets/js/40.9a2d79c4.js"><link rel="prefetch" href="/vue-dndrop/assets/js/41.2ac222c4.js"><link rel="prefetch" href="/vue-dndrop/assets/js/42.20a490d2.js"><link rel="prefetch" href="/vue-dndrop/assets/js/43.7d383b96.js"><link rel="prefetch" href="/vue-dndrop/assets/js/44.4b8c9267.js"><link rel="prefetch" href="/vue-dndrop/assets/js/45.ca997d97.js"><link rel="prefetch" href="/vue-dndrop/assets/js/46.f682e318.js"><link rel="prefetch" href="/vue-dndrop/assets/js/47.c676bb22.js"><link rel="prefetch" href="/vue-dndrop/assets/js/48.147620a4.js"><link rel="prefetch" href="/vue-dndrop/assets/js/49.1fd53f06.js"><link rel="prefetch" href="/vue-dndrop/assets/js/50.5d0d0213.js"><link rel="prefetch" href="/vue-dndrop/assets/js/51.b8046da8.js"><link rel="prefetch" href="/vue-dndrop/assets/js/52.bc346274.js"><link rel="prefetch" href="/vue-dndrop/assets/js/53.033100aa.js"><link rel="prefetch" href="/vue-dndrop/assets/js/54.c898d945.js"><link rel="prefetch" href="/vue-dndrop/assets/js/55.3ffb2a7b.js"><link rel="prefetch" href="/vue-dndrop/assets/js/56.8c70ce23.js"><link rel="prefetch" href="/vue-dndrop/assets/js/57.e1784654.js"><link rel="prefetch" href="/vue-dndrop/assets/js/58.58eea691.js"><link rel="prefetch" href="/vue-dndrop/assets/js/59.b4eb6c96.js"><link rel="prefetch" href="/vue-dndrop/assets/js/60.dfdea7b3.js"><link rel="prefetch" href="/vue-dndrop/assets/js/61.1d324315.js"><link rel="prefetch" href="/vue-dndrop/assets/js/62.d0231f19.js"><link rel="prefetch" href="/vue-dndrop/assets/js/63.e091a166.js"><link rel="prefetch" href="/vue-dndrop/assets/js/8.24c57b45.js"><link rel="prefetch" href="/vue-dndrop/assets/js/9.c76476f8.js"><link rel="prefetch" href="/vue-dndrop/assets/js/demo-source.5eb80d9c.js"><link rel="prefetch" href="/vue-dndrop/assets/js/demo.e415c2aa.js">
+    <link rel="stylesheet" href="/vue-dndrop/assets/css/1.styles.c2b1713c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vue-dndrop/" class="home-link router-link-active"><!----> <span class="site-name">Documentation - vue-dndrop</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vue-dndrop/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/vue-dndrop/examples/events.html" class="nav-link">
+  Examples
+</a></div> <a href="https://github.com/amendx/vue-dndrop" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vue-dndrop/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/vue-dndrop/examples/events.html" class="nav-link">
+  Examples
+</a></div> <a href="https://github.com/amendx/vue-dndrop" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/vue-dndrop/guide/" class="sidebar-heading clickable"><span>Guide</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue-dndrop/guide/installation.html" class="sidebar-link">Installation</a></li><li><a href="/vue-dndrop/guide/using-vue.html" class="sidebar-link">Vue</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/vue-dndrop/api/" class="sidebar-heading clickable router-link-active open"><span>API</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue-dndrop/api/container.html" class="sidebar-link">Container</a></li><li><a href="/vue-dndrop/api/draggable.html" class="sidebar-link">Draggable</a></li><li><a href="/vue-dndrop/api/lifecycle.html" aria-current="page" class="active sidebar-link">Lifecycle</a></li><li><a href="/vue-dndrop/api/events.html" class="sidebar-link">Events</a></li><li><a href="/vue-dndrop/api/callbacks.html" class="sidebar-link">Callbacks</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/vue-dndrop/examples/" class="sidebar-heading clickable"><span>Examples</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue-dndrop/examples/helpers.html" class="sidebar-link">Helpers</a></li><li><a href="/vue-dndrop/examples/events.html" class="sidebar-link">Events</a></li><li><a href="/vue-dndrop/examples/cards.html" class="sidebar-link">Cards</a></li><li><a href="/vue-dndrop/examples/cards-kanban.html" class="sidebar-link">Cards kanban</a></li><li><a href="/vue-dndrop/examples/copy.html" class="sidebar-link">Copy</a></li><li><a href="/vue-dndrop/examples/drag-class.html" class="sidebar-link">Drag class</a></li><li><a href="/vue-dndrop/examples/drag-handle.html" class="sidebar-link">Drag handle</a></li><li><a href="/vue-dndrop/examples/form.html" class="sidebar-link">Form</a></li><li><a href="/vue-dndrop/examples/groups.html" class="sidebar-link">Groups</a></li><li><a href="/vue-dndrop/examples/simple-horizontal.html" class="sidebar-link">Horizontal</a></li><li><a href="/vue-dndrop/examples/lock-axis.html" class="sidebar-link">Lock axis</a></li><li><a href="/vue-dndrop/examples/nested.html" class="sidebar-link">Nested</a></li><li><a href="/vue-dndrop/examples/simple-scroller.html" class="sidebar-link">Scroller</a></li><li><a href="/vue-dndrop/examples/simple.html" class="sidebar-link">Simple</a></li><li><a href="/vue-dndrop/examples/simple-tagless.html" class="sidebar-link">Simple (no tags)</a></li><li><a href="/vue-dndrop/examples/transition-duration.html" class="sidebar-link">Transition duration</a></li><li><a href="/vue-dndrop/examples/table-drag.html" class="sidebar-link">Table</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="lifecycle"><a href="#lifecycle" class="header-anchor">#</a> Lifecycle</h1> <p>The lifecycle of a drag is both described, and can be controlled, by a series of <a href="#callbacks">callbacks</a> and <a href="#events">events</a>, which are illustrated below for a example <strong>containing 3 containers</strong>:</p> <div class="language- extra-class"><pre class="language-text"><code>Mouse     Calls  Callback / Event       Parameters              Notes
+down   o                                                        Initial click
+move   o                                                        Initial drag
+       |
+       |         get-child-payload()    index                   Function should return payload
+       |
+       |   3 x   should-accept-drop()   srcOptions, payload     Fired for all containers
+       |
+       |   3 x   drag-start             dragResult              Fired for all containers
+       |
+       |         drag-enter
+       v
+move   o                                                        Drag over containers
+       |
+       |   n x   drag-leave                                     Fired as draggable leaves container
+       |   n x   drag-enter                                     Fired as draggable enters container
+       v
+up     o                                                        Finish drag
+                 should-animate-drop()  srcOptions, payload     Fires once for dropped container
+           3 x   drag-end               dragResult              Fired for all containers
+           n x   drop                   dropResult              Fired only for droppable containers
+</code></pre></div><blockquote><p>Note that <code>should-accept-drop</code> is fired before every <code>drag-start</code>, and before every <code>drag-end</code>, but has been omitted here for clarity.</p></blockquote> <hr> <p>The <code>dragResult</code> parameter has the format:</p> <div class="language-js extra-class"><pre class="language-js"><code>dragResult<span class="token operator">:</span> <span class="token punctuation">{</span>
+    payload<span class="token punctuation">,</span>
+    isSource<span class="token punctuation">,</span>
+    willAcceptDrop<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><hr> <p>The <code>dropResult</code> parameter has the format:</p> <div class="language-js extra-class"><pre class="language-js"><code>dropResult<span class="token operator">:</span> <span class="token punctuation">{</span>
+    addedIndex<span class="token punctuation">,</span>
+    removedIndex<span class="token punctuation">,</span>
+    payload<span class="token punctuation">,</span>
+    element<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>Note that additional parameters can be passed to callbacks and event handlers by writing an interim handler <em>inline</em> in the markup:</p></blockquote> <hr> <p>The <code>getShouldAcceptDrop</code> parameter has the format:</p> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;(items, index) in groups&quot;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Container</span></span> <span class="token attr-name">group-name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>column<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">:should-accept-drop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>(src, payload) =&gt; getShouldAcceptDrop(index, src, payload)<span class="token punctuation">&quot;</span></span>
+    <span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    ...
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Container</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><blockquote><p>This can provide handler functions context-sensitive data, such as the loop index or current item.</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vue-dndrop/api/draggable.html" class="prev">
+        Draggable
+      </a></span> <span class="next"><a href="/vue-dndrop/api/events.html">
+        Events
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vue-dndrop/assets/js/app.0014c683.js" defer></script><script src="/vue-dndrop/assets/js/7.f2eec454.js" defer></script><script src="/vue-dndrop/assets/js/39.83cf11ca.js" defer></script>
+  </body>
+</html>
