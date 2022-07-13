@@ -18,13 +18,6 @@ npm i vue-dndrop@next
 
 > Feel free to contribute.
 
----
-
-## Demo
-
-View the **original** docs here:
-
-- https://amendx.github.io/vue-dndrop
 
 ---
 

@@ -79,6 +79,6 @@ Import `Container, Draggable` from `vue-dndrop` and have fun.
 ## Simple component
 
 ::: tip
-See this example [here](https://github.com/amendx/vue-dndrop), and check your console (or [vue-devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=pt-BR)) for some magic.
+See this example  [here](https://amendx.github.io/vue-dndrop/examples/cards-kanban.html), and check your console (or [vue-devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=pt-BR)) for some magic.
 :::
 <cards-kanban />
