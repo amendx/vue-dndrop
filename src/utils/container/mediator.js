@@ -34,9 +34,8 @@ function addGrabListeners () {
 }
 
 function removeGrabListeners () {
-  grabEvents.forEach(e => {
-    window.document.removeEventListener(e, onMouseDown, { passive: false });
-  });
+  const [, touchstart] = grabEvents;
+  window.document.removeEventListener(touchstart, onMouseDown, { passive: false });
 }
 function addMoveListeners () {
   moveEvents.forEach(e => {
