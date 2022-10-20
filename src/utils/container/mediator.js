@@ -285,38 +285,40 @@ const handleDragStartConditions = (function handleDragStartConditions () {
 })();
 function onMouseDown (event) {
   const e = getPointerEvent(event);
-  if (!isDragging && (e.button === undefined || e.button === 0)) {
+  if (containers && containers.length && !isDragging && (e.button === undefined || e.button === 0)) {
     grabbedElement = Utils.getParent(e.target, '.' + constants.wrapperClass);
     if (grabbedElement) {
       const containerElement = Utils.getParent(grabbedElement, '.' + constants.containerClass);
       const container = containers.filter(p => p.element === containerElement)[0];
-      const dragHandleSelector = container.getOptions().dragHandleSelector;
-      const nonDragAreaSelector = container.getOptions().nonDragAreaSelector;
-      let startDrag = true;
-      if (dragHandleSelector && !Utils.getParent(e.target, dragHandleSelector)) {
-        startDrag = false;
-      }
-      if (nonDragAreaSelector && Utils.getParent(e.target, nonDragAreaSelector)) {
-        startDrag = false;
-      }
-      if (startDrag) {
-        container.layout.invalidate();
-        Utils.addClass(window.document.body, constants.disableTouchActions);
-        Utils.addClass(window.document.body, constants.noUserSelectClass);
-        const onMouseUp = () => {
-          Utils.removeClass(window.document.body, constants.disableTouchActions);
-          Utils.removeClass(window.document.body, constants.noUserSelectClass);
-          window.document.removeEventListener('mouseup', onMouseUp);
-          window.document.removeEventListener('touchend', onMouseUp);
-        };
-        window.document.addEventListener('mouseup', onMouseUp);
-        window.document.addEventListener('touchend', onMouseUp);
-        handleDragStartConditions(e, container.getOptions().dragBeginDelay, () => {
-          Utils.clearSelection();
-          initiateDrag(e, Utils.getElementCursor(event.target));
-          addMoveListeners();
-          addReleaseListeners();
-        });
+      if (container && container !== undefined) {
+        const dragHandleSelector = container.getOptions().dragHandleSelector;
+        const nonDragAreaSelector = container.getOptions().nonDragAreaSelector;
+        let startDrag = true;
+        if (dragHandleSelector && !Utils.getParent(e.target, dragHandleSelector)) {
+          startDrag = false;
+        }
+        if (nonDragAreaSelector && Utils.getParent(e.target, nonDragAreaSelector)) {
+          startDrag = false;
+        }
+        if (startDrag) {
+          container.layout.invalidate();
+          Utils.addClass(window.document.body, constants.disableTouchActions);
+          Utils.addClass(window.document.body, constants.noUserSelectClass);
+          const onMouseUp = () => {
+            Utils.removeClass(window.document.body, constants.disableTouchActions);
+            Utils.removeClass(window.document.body, constants.noUserSelectClass);
+            window.document.removeEventListener('mouseup', onMouseUp);
+            window.document.removeEventListener('touchend', onMouseUp);
+          };
+          window.document.addEventListener('mouseup', onMouseUp);
+          window.document.addEventListener('touchend', onMouseUp);
+          handleDragStartConditions(e, container.getOptions().dragBeginDelay, () => {
+            Utils.clearSelection();
+            initiateDrag(e, Utils.getElementCursor(event.target));
+            addMoveListeners();
+            addReleaseListeners();
+          });
+        }
       }
     }
   }
