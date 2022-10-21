@@ -148,7 +148,7 @@ Default value is 'div'.
 tag = "table";
 ```
 
-#### possible values
+#### Possible values
 
 - string : The tag name of the root element to be created
 - object : Node definition
@@ -194,7 +194,7 @@ up     o                                                        Finish drag
 
 > Note that `should-accept-drop` is fired before every `drag-start`, and before every `drag-end`, but has been omitted here for clarity.
 
-The `dragResult` parameter has the format:
+The `dragResult` parameter has the following format:
 
 ```js
 dragResult: {
@@ -204,7 +204,7 @@ dragResult: {
 }
 ```
 
-The `dropResult` parameter has the format:
+The `dropResult` parameter has the following format:
 
 ```js
 dropResult: {
