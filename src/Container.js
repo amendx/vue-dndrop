@@ -1,9 +1,9 @@
 /* eslint-disable curly */
-import smoothDnD from './utils/container/container.js';
+import vueDndrop from './utils/container/container.js';
 import { reactDropHandler } from './utils/container/dropHandlers';
 import { getTagProps, validateTagProp } from './utils';
-smoothDnD.dropHandler = reactDropHandler().handler;
-smoothDnD.wrapChild = false;
+vueDndrop.dropHandler = reactDropHandler().handler;
+vueDndrop.wrapChild = false;
 
 const eventEmitterMap = {
   // eslint-disable-next-line quote-props
@@ -52,7 +52,7 @@ export default {
   name: 'Container',
   mounted () {
     this.containerElement = this.$refs.container || this.$el;
-    this.container = smoothDnD(this.containerElement, mapOptions(this));
+    this.container = vueDndrop(this.containerElement, mapOptions(this));
   },
   updated () {
     if (
@@ -63,7 +63,7 @@ export default {
         this.container.dispose();
       }
       this.containerElement = this.$refs.container || this.$el;
-      this.container = smoothDnD(this.containerElement, mapOptions(this));
+      this.container = vueDndrop(this.containerElement, mapOptions(this));
       return;
     }
 
