@@ -132,10 +132,21 @@ export default {
     },
     countValue(column, index) {
       if (!this.hasExternalCount) return column.columnItems.length;
-      const currentValue = this.columnCount.find(
+
+      const isNumeric = (value) => !isNaN(Number(value));
+      const trueValue = (value) => value || value == 0;
+      const validNumericArray = this.columnCount.length === this.columns.length && this.columnCount.every((value) => isNumeric(value)) 
+
+      if (validNumericArray)
+        return trueValue(this.columnCount[index])
+          ? this.columnCount[index]
+          : column.columnItems.length;
+
+      let currentValue = this.columnCount.find(
         (item) => item.id === column.id
       )?.value;
-      return currentValue || this.columnCount[index];
+
+      return trueValue(currentValue) ? currentValue : column.columnItems.length;
     },
   },
 };
