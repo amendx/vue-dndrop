@@ -130,9 +130,12 @@ export default {
     dropNotAllowed({ payload, container }) {
       console.log("drop not allowed", payload);
     },
-    countValue(column, id) {
+    countValue(column, index) {
       if (!this.hasExternalCount) return column.columnItems.length;
-      return this.columnCount[id].value || this.columnCount[id];
+      const currentValue = this.columnCount.find(
+        (item) => item.id === column.id
+      )?.value;
+      return currentValue || this.columnCount[index];
     },
   },
 };

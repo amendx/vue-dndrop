@@ -10,6 +10,7 @@ You can also find the helpers functions used in this example [here](/examples/he
 - **props**:
 
   - :column-count: `[Array]` - An array of `values` **or** `Objects` with `{ id, value }` matching your columns' items value
+     > *remember if you use this **prop** you'll have to manage the change of values externally*
 ```js
 :column-count =[2, 12, 0]"
 :column-count =[
