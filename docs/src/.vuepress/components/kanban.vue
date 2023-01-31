@@ -48,6 +48,10 @@ export default {
       type: String,
       default: () => "itens",
     },
+    columnCount: {
+      type: [Array],
+      default: () => [],
+    },
   },
   data() {
     return {
@@ -75,6 +79,9 @@ export default {
     },
     contentStyle() {
       return `background-color: ${this.colBgColor}`;
+    },
+    hasExternalCount() {
+      return this.columnCount && !!this.columnCount.length;
     },
   },
   mounted() {
@@ -123,6 +130,24 @@ export default {
     dropNotAllowed({ payload, container }) {
       console.log("drop not allowed", payload);
     },
+    countValue(column, index) {
+      if (!this.hasExternalCount) return column.columnItems.length;
+
+      const isNumeric = (value) => !isNaN(Number(value));
+      const trueValue = (value) => value || value == 0;
+      const validNumericArray = this.columnCount.length === this.columns.length && this.columnCount.every((value) => isNumeric(value)) 
+
+      if (validNumericArray)
+        return trueValue(this.columnCount[index])
+          ? this.columnCount[index]
+          : column.columnItems.length;
+
+      let currentValue = this.columnCount.find(
+        (item) => item.id === column.id
+      )?.value;
+
+      return trueValue(currentValue) ? currentValue : column.columnItems.length;
+    },
   },
 };
 </script>
@@ -144,7 +169,8 @@ export default {
             <h3 class="kanban__title">{{ column.name }}</h3>
           </div>
           <p v-if="!innerColCount" class="kanban__quantity">
-            {{ column.columnItems.length }} {{ countText }}
+            {{ countValue(column, index) }}
+            {{ countText }}
           </p>
         </div>
         <div class="kanban__content" :style="contentStyle">
@@ -152,7 +178,7 @@ export default {
             v-if="innerColCount"
             :class="['kanban__quantity', 'kanban__quantity--inner-count']"
           >
-            {{ column.columnItems.length }} {{ countText }}
+            {{ countValue(column, index) }} {{ countText }}
           </p>
           <Container
             group-name="kanban"
@@ -192,10 +218,9 @@ export default {
           :key="i"
           class="kanban__skeleton-column"
           :animation-data="index"
-          :style="
-            `min-width: ${colMinWidth || 180}px; max-width: ${colMaxWidth ||
-              330}px`
-          "
+          :style="`min-width: ${colMinWidth || 180}px; max-width: ${
+            colMaxWidth || 330
+          }px`"
         >
           <slot name="skeletonCard" />
         </div>
