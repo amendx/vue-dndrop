@@ -124,11 +124,11 @@ export default {
       <div v-for="(items, index) in groups" :key="index" class="column">
         <div class="column-actions">
           <label>
-            <input type="checkbox" v-model="flags[index].drop" /> Accept Drop
+            <input type="checkbox" v-model="flags[index].drop" /> Accept drop
           </label>
           <label>
             <input type="checkbox" v-model="flags[index].animate" /> Animate
-            Drop
+            drop
           </label>
         </div>
         <Container
@@ -159,6 +159,7 @@ export default {
 
     <div class="controls">
       <h4 class="title">Fired events</h4>
+      <hr/>
       <small class="title">
         Choose which events will be used in the columns
       </small>
@@ -171,15 +172,16 @@ export default {
           <input type="checkbox" v-model="logPayload" /> log payload
         </label>
       </div>
+      <hr/>
       <div class="buttons">
         <button
-          class="button remove"
+          class="button-column remove"
           @click="removeColumn()"
           :disabled="groups.length === 1"
         >
           Remove Column
         </button>
-        <button class="button add" @click="addColumn()">Add Column</button>
+        <button class="button-column add" @click="addColumn()">Add Column</button>
       </div>
     </div>
   </div>
@@ -220,7 +222,7 @@ export default {
   justify-content: space-evenly;
 }
 
-.buttons .button {
+.buttons .button-column {
   background-color: white;
   border: 1px solid #e0e0e0;
   border-left: 5px solid #c4ebaf;
@@ -230,15 +232,15 @@ export default {
   transition: border-color 0.2s linear;
 }
 
-.buttons .button.remove {
+.buttons .button-column.remove {
   border-left: 5px solid #dc3545;
 }
 
-.buttons .button.remove:disabled {
+.buttons .button-column.remove:disabled {
   border-left: 5px solid #e0e0e0;
 }
 
-.buttons .button.add {
+.buttons .button-column.add {
   border-left: 5px solid #c4ebaf;
 }
 

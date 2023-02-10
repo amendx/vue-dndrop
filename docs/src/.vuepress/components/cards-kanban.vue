@@ -441,6 +441,7 @@ export default {
 
 .kanban-cards {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 5px 0;
 }

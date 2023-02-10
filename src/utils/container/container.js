@@ -67,7 +67,7 @@ function isDragRelevant ({ element, getOptions }) {
 }
 
 function wrapChild (child) {
-  if (smoothDnD.wrapChild) {
+  if (vueDndrop.wrapChild) {
     const div = window.document.createElement('div');
     div.className = `${wrapperClass}`;
     child.parentElement.insertBefore(div, child);
@@ -96,7 +96,7 @@ function wrapChildren (element) {
 }
 
 function unwrapChildren (element) {
-  if (smoothDnD.wrapChild) {
+  if (vueDndrop.wrapChild) {
     Array.prototype.forEach.call(element.children, (child) => {
       if (child.nodeType === Node.ELEMENT_NODE) {
         if (hasClass(child, wrapperClass)) {
@@ -207,7 +207,7 @@ function handleDrop ({ element, draggables, layout, getOptions }) {
     layout,
     getOptions,
   });
-  const dropHandler = (smoothDnD.dropHandler || domDropHandler)({
+  const dropHandler = (vueDndrop.dropHandler || domDropHandler)({
     element,
     draggables,
     layout,
@@ -927,10 +927,10 @@ function Container (element) {
         setDraggables(props.draggables, element);
       },
       getScrollMaxSpeed () {
-        return smoothDnD.maxScrollSpeed;
+        return vueDndrop.maxScrollSpeed;
       },
       shouldUseTransformForGhost () {
-        return smoothDnD.useTransformForGhost === true;
+        return vueDndrop.useTransformForGhost === true;
       },
       getOptions,
       setOptions,
@@ -941,7 +941,7 @@ function Container (element) {
 }
 
 // exported part of container
-const smoothDnD = function (element, options) {
+const vueDndrop = function (element, options) {
   const containerIniter = Container(element);
   const container = containerIniter(options);
   element[containerInstance] = container;
@@ -959,13 +959,13 @@ const smoothDnD = function (element, options) {
 
 // wrap all draggables by default
 // in react,vue,angular this value will be set to false
-smoothDnD.wrapChild = true;
-smoothDnD.cancelDrag = function () {
+vueDndrop.wrapChild = true;
+vueDndrop.cancelDrag = function () {
   Mediator.cancelDrag();
 };
 
-smoothDnD.isDragging = function () {
+vueDndrop.isDragging = function () {
   return Mediator.isDragging();
 };
 
-export default smoothDnD;
+export default vueDndrop;

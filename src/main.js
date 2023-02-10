@@ -5,5 +5,5 @@ import container from './utils/container/container';
 export {
   Container,
   Draggable,
-  container as smoothDnD,
+  container as vueDndrop,
 };

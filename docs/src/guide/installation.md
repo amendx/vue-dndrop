@@ -1,6 +1,6 @@
 # Installation
 
-**This library is now supported for both [Vue2](https://vuejs.org/v2/guide/) and [Vue3](https://v3.vuejs.org/guide/introduction.html) versions**
+**This library has support for both [Vue 2](https://vuejs.org/v2/guide/) and [Vue 3](https://v3.vuejs.org/guide/introduction.html) versions of Vue.js.**
 
 - `vue 2.x`:
 
@@ -14,7 +14,7 @@ npm i vue-dndrop
 npm i vue-dndrop@next
 ```
 
-###### This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain javascript now.
+###### This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain JavaScript now.
 
 > Feel free to contribute.
 

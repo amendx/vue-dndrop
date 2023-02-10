@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-A Vue drag and drop library.
+A Vue.js drag and drop library.
 </p>
 
 <p align="center">
@@ -52,7 +52,7 @@ npm i vue-dndrop@next
 npm i vue-dndrop@next
 ```
 
-> This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain javascript now.
+> This library consists on a wrapper for Vue.js components over the long missed [smooth-dnd](https://github.com/kutlugsahin/smooth-dnd) library. To make it less _importee_, all the content imported from `smooth-dnd` is now on our own library. It's all plain JavaScript now.
 
 ### Contributors
 
@@ -148,7 +148,7 @@ export default {
 tag = "table";
 ```
 
-#### possible values
+#### Possible values
 
 - string : The tag name of the root element to be created
 - object : Node definition
@@ -194,7 +194,7 @@ up     o                                                        Finish drag
 
 > Note that `should-accept-drop` is fired before every `drag-start`, and before every `drag-end`, but has been omitted here for clarity.
 
-The `dragResult` parameter has the format:
+The `dragResult` parameter has the following format:
 
 ```js
 dragResult: {
@@ -204,7 +204,7 @@ dragResult: {
 }
 ```
 
-The `dropResult` parameter has the format:
+The `dropResult` parameter has the following format:
 
 ```js
 dropResult: {
@@ -495,7 +495,7 @@ Wrapper component for Container's children. Every child element should be wrappe
 tag = "tr";
 ```
 
-#### possible values
+#### Possible values
 
 - string : The tag name of the root element to be created
 - object : Node definition
