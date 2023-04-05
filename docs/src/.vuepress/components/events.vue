@@ -159,7 +159,7 @@ export default {
 
     <div class="controls">
       <h4 class="title">Fired events</h4>
-      <hr/>
+      <hr />
       <small class="title">
         Choose which events will be used in the columns
       </small>
