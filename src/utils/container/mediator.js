@@ -250,6 +250,9 @@ const handleDragStartConditions = (function handleDragStartConditions () {
     releaseEvents.forEach(e => window.document.addEventListener(e, onUp), {
       passive: false,
     });
+    grabEvents.forEach(e => window.document.addEventListener(e, onMove), {
+      passive: false,
+    });
     window.document.addEventListener('drag', onHTMLDrag, {
       passive: false,
     });
@@ -260,6 +263,9 @@ const handleDragStartConditions = (function handleDragStartConditions () {
       passive: false,
     });
     releaseEvents.forEach(e => window.document.removeEventListener(e, onUp), {
+      passive: false,
+    });
+    grabEvents.forEach(e => window.document.removeEventListener(e, onMove), {
       passive: false,
     });
     window.document.removeEventListener('drag', onHTMLDrag, {
