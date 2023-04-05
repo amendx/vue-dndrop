@@ -181,7 +181,9 @@ export default {
         >
           Remove Column
         </button>
-        <button class="button-column add" @click="addColumn()">Add Column</button>
+        <button class="button-column add" @click="addColumn()">
+          Add Column
+        </button>
       </div>
     </div>
   </div>

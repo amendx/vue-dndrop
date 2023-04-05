@@ -21,7 +21,7 @@ A Vue drag and drop library.
 
 ---
 
-A fast and lightweight drag & drop library for Vue.js with many configuration options, covering multiple scenarios.
+A fast and lightweight drag & drop library for Vue.js with **so many** configuration options, covering multiple scenarios.
 
 All you have to do is import [Container](/api/container.md) & [Draggable](/api/draggable.md) into your project and have fun with it.
 
