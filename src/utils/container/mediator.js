@@ -355,7 +355,7 @@ function handleMouseMoveForContainer ({ clientX, clientY }, orientation = 'verti
   }
 }
 function onMouseMove (event) {
-  event.preventDefault();
+  if (event.cancelable) event.preventDefault();
   const e = getPointerEvent(event);
   if (!draggableInfo) {
     initiateDrag(e, Utils.getElementCursor(event.target));

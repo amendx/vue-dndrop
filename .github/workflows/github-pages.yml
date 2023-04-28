@@ -1,0 +1,44 @@
+name: pages
+on:
+  pull_request:
+    branches: [master]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: work around permission issue
+        run: git config --global --add safe.directory /github/workspace
+
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+
+      - name: install dependencies
+        run: |
+          npm ci
+          npm run build
+
+      - name: generate docs
+        run: |
+          cd docs/
+          npm install
+          npm run build
+
+      - name: init new repo in dist folder and commit generated files
+        run: |
+          cd docs/src/.vuepress/dist
+          git init
+          git add -A
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m 'deploy'
+
+      - name: force push to destination branch
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          force: true
+          directory: ./docs/src/.vuepress/dist
