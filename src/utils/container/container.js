@@ -863,6 +863,7 @@ function Container (element) {
 
     function dispose (container) {
       scrollListener.dispose();
+      container.layout.removeResizeListener();
       unwrapChildren(container.element);
     }
 

@@ -191,6 +191,12 @@ export default function layoutManager (containerElement, orientation, _animation
   function setBegin (style, value) {
     propMapper.set(style, 'begin', value);
   }
+
+  function removeResizeListener() {
+    window.removeEventListener('resize', function () {
+      invalidateContainerRectangles(containerElement);
+    });
+  }
   return {
     getSize,
     getContainerRectangles,
@@ -213,5 +219,6 @@ export default function layoutManager (containerElement, orientation, _animation
     invalidateRects,
     getPosition,
     setBegin,
+    removeResizeListener,
   };
 }
