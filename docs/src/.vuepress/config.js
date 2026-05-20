@@ -85,6 +85,7 @@ module.exports = {
           "/examples/simple-horizontal",
           "/examples/lock-axis",
           "/examples/nested",
+          "/examples/pagination",
           "/examples/simple-scroller",
           "/examples/simple",
           "/examples/simple-tagless",
