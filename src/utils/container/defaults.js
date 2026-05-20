@@ -7,4 +7,5 @@ export const defaultOptions = {
   autoScrollEnabled: true,
   shouldAcceptDrop: undefined,
   shouldAnimateDrop: undefined,
+  shouldRefresh: false, // Enable automatic refresh for dynamic content (pagination, array reassignment)
 };

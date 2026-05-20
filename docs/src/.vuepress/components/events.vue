@@ -37,6 +37,7 @@ export default {
         "drag-enter": true,
         "drag-leave": true,
         "drop-not-allowed": true,
+        "should-refresh": false,
         drop: true,
       },
       logPayload: true,
@@ -103,11 +104,27 @@ export default {
     addColumn() {
       this.groups.push(generate(this.groups.length + 1));
       this.flags.push({ drop: true, animate: true });
+      this.log("should-refresh", "New column added - auto-refresh triggered");
     },
 
     removeColumn() {
       this.groups.pop();
       this.flags.pop();
+    },
+
+    addItem(groupIndex) {
+      const newItem = {
+        id: id(),
+        data: `New Item ${this.groups[groupIndex].length + 1}`,
+      };
+      this.groups[groupIndex].push(newItem);
+      this.log("should-refresh", "New item added - auto-refresh triggered");
+    },
+
+    removeItem(groupIndex) {
+      if (this.groups[groupIndex].length > 1) {
+        this.groups[groupIndex].pop();
+      }
     },
 
     log(name, ...args) {
@@ -130,10 +147,19 @@ export default {
             <input type="checkbox" v-model="flags[index].animate" /> Animate
             drop
           </label>
+          <div style="display: flex; gap: 5px; margin-top: 8px;">
+            <button @click="addItem(index)" style="font-size: 0.8em; padding: 4px 8px; background: #28a745; color: white; border: none; border-radius: 3px;">
+              + Item
+            </button>
+            <button @click="removeItem(index)" :disabled="groups[index].length <= 1" style="font-size: 0.8em; padding: 4px 8px; background: #dc3545; color: white; border: none; border-radius: 3px;">
+              - Item
+            </button>
+          </div>
         </div>
         <Container
           :data-index="index"
           group-name="column"
+          :should-refresh="true"
           :get-child-payload="(itemIndex) => getChildPayload(index, itemIndex)"
           :should-accept-drop="
             (src, payload) => getShouldAcceptDrop(index, src, payload)
