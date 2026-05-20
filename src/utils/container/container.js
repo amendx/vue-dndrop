@@ -946,13 +946,69 @@ const vueDndrop = function (element, options) {
   const container = containerIniter(options);
   element[containerInstance] = container;
   Mediator.register(container);
+
+  // Optional auto-refresh for pagination/dynamic content
+  let observer = null;
+
+  // Only setup MutationObserver if shouldRefresh is enabled
+  if (container.getOptions().shouldRefresh) {
+    observer = new MutationObserver((mutations) => {
+      // Don't interfere if drag is currently active
+      if (Mediator.isDragging()) return;
+
+      // Check if any elements were added
+      const hasNewElements = mutations.some(mutation =>
+        mutation.type === 'childList' &&
+        mutation.addedNodes.length > 0 &&
+        Array.from(mutation.addedNodes).some(node => node.nodeType === 1)
+      );
+
+      if (hasNewElements) {
+        // Allow Vue's DOM update to settle before re-registering
+        setTimeout(() => {
+          if (!Mediator.isDragging()) {
+            // Store existing draggables before refresh
+            const existingDraggables = new Set(container.draggables);
+
+            // Refresh draggables list to include new elements
+            container.setDraggables();
+
+            // Apply animations only to newly added draggables
+            container.draggables.forEach(draggable => {
+              if (!existingDraggables.has(draggable) && !draggable.classList.contains('dndrop-ghost')) {
+                setAnimation(draggable, true, container.getOptions().animationDuration);
+              }
+            });
+          }
+        }, 100);
+      }
+    });
+
+    observer.observe(element, {
+      childList: true,
+      subtree: false
+    });
+  }
+
   return {
     dispose () {
+      if (observer) {
+        observer.disconnect();
+      }
       Mediator.unregister(container);
       container.dispose(container);
     },
     setOptions (options, merge) {
       container.setOptions(options, merge);
+    },
+    refreshDraggables () {
+      container.setDraggables();
+      container.layout.invalidateRects();
+      const draggables = container.draggables.filter(element =>
+        !element.classList.contains('dndrop-ghost'));
+      draggables.forEach(function (p) {
+        return setAnimation(p, true, container.getOptions().animationDuration);
+      });
     },
   };
 };

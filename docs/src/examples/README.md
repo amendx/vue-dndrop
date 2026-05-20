@@ -17,6 +17,7 @@ For every example created in this documentation, there are some that uses some h
 - [Groups](groups.html)
 - [Lock axis](lock-axis.html)
 - [Nested](nested.html)
+- [Pagination](pagination.html)
 - [Simple](simple.html)
 - [Simple (no tags)](simple-tagless.html)
 - [Simple horizontal](simple-horizontal.html)
