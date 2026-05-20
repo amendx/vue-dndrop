@@ -87,6 +87,7 @@ export default {
     dragClass: String,
     dropClass: String,
     removeOnDropOut: { type: Boolean, default: false },
+    shouldRefresh: { type: Boolean, default: false },
     'drag-start': Function,
     'drag-end': Function,
     drop: Function,
